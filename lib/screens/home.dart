@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:buttons_tabbar/buttons_tabbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -142,3 +141,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+ */
