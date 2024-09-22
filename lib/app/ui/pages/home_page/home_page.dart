@@ -43,6 +43,7 @@ class HomePage extends GetView<HomeController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //TODO: set cứng vì ko có api nên lặp
                       Opacity(
                         opacity: 0.5,
                         child: Row(
@@ -127,18 +128,23 @@ class HomePage extends GetView<HomeController> {
                   top: 120,
                   left: 320,
                   child: Text(
+                    //TODO: set cứng vì ko có api nên lặp
                     '감수된玄: 5%\n습도: 68%\n용짝 : 3m/s',
                     style: TextStyle(fontSize: 10),
                   ),
                 ),
                 Positioned(
                   top: 270,
-                  left: 280,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.abc_outlined,
-                      size: 50.0,
+                  left: 333,
+                  child: InkWell(
+                    onTap: () {
+                      print("Image button pressed");
+                    },
+                    child: Image.asset(
+                      'assets/images/ship_add.png',
+                      width: 70,
+                      height: 70,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -184,7 +190,6 @@ class HomePage extends GetView<HomeController> {
             const Expanded(
               child: TabBarView(
                 children: [
-                  //Room1Content(),
                   Center(child: Text("Content for Room1")),
                   Center(child: Text("Content for Room2")),
                   Center(child: Text("Content for Room3")),

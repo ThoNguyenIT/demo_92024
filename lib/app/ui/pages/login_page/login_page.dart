@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_is_not_empty
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/login_controller.dart';
