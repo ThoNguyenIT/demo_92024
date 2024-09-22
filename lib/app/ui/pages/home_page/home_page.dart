@@ -1,3 +1,4 @@
+import 'package:demo_92024/app/ui/pages/home_page/room1_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
@@ -43,7 +44,7 @@ class HomePage extends GetView<HomeController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      //TODO: set cứng vì ko có api nên lặp
+                      // Các nội dung đặt cứng
                       Opacity(
                         opacity: 0.5,
                         child: Row(
@@ -128,7 +129,6 @@ class HomePage extends GetView<HomeController> {
                   top: 120,
                   left: 320,
                   child: Text(
-                    //TODO: set cứng vì ko có api nên lặp
                     '감수된玄: 5%\n습도: 68%\n용짝 : 3m/s',
                     style: TextStyle(fontSize: 10),
                   ),
@@ -190,7 +190,7 @@ class HomePage extends GetView<HomeController> {
             const Expanded(
               child: TabBarView(
                 children: [
-                  Center(child: Text("Content for Room1")),
+                  Room1Page(),
                   Center(child: Text("Content for Room2")),
                   Center(child: Text("Content for Room3")),
                 ],
