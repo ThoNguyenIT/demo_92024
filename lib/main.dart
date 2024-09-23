@@ -1,8 +1,8 @@
-import 'package:demo_92024/app/bindings/login_binding.dart';
+import 'package:demo_92024/app/bindings/cameraview_binding.dart';
+import 'package:demo_92024/app/ui/pages/cameraview_page/cameraview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
-import 'app/ui/pages/login_page/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +15,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialBinding: LoginBinding(),
-      home: const LoginPage(),
+      initialBinding: CameraviewBinding(),
+      home: const CameraviewPage(),
       getPages: AppPages.pages,
     );
   }

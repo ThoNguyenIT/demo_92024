@@ -8,7 +8,7 @@ class HomeController extends GetxController {
     isSwitched.value = value;
   }
 
-  void Drawer() {
+  void drawer() {
     isOpen.value = !isOpen.value;
   }
 }

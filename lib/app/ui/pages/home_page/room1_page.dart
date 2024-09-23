@@ -26,12 +26,15 @@ class _Room1State extends State<Room1Page> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SwitchButton(controller: controller),
-              const RoomColumn(),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SwitchButton(controller: controller),
+                const RoomColumn(),
+              ],
+            ),
           ),
           Stack(
             children: [
@@ -82,18 +85,11 @@ class _Room1State extends State<Room1Page> {
                         children: [
                           Image.asset(
                             imagePaths[index],
-                            width: 60,
-                            height: 60,
+                            width: 120,
+                            height: 80,
                             fit: BoxFit.cover,
                           ),
                           const SizedBox(height: 5),
-                          Text(
-                            "Button ${index + 1}",
-                            style: const TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            ),
-                          ),
                         ],
                       ),
                     );
