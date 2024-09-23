@@ -1,4 +1,6 @@
+import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Room1Page extends StatefulWidget {
   const Room1Page({super.key});
@@ -8,29 +10,178 @@ class Room1Page extends StatefulWidget {
 }
 
 class _Room1State extends State<Room1Page> {
-  bool isSwitched = false;
+  final HomeController controller = Get.put(HomeController());
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> imagePaths = [
+      'assets/images/1.png',
+      'assets/images/2.png',
+      'assets/images/3.png',
+      'assets/images/4.png',
+      'assets/images/5.png',
+      'assets/images/6.png',
+    ];
+
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SwitchButton(controller: controller),
+              const RoomColumn(),
+            ],
+          ),
+          Stack(
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 20),
+                child: Image.asset(
+                  'assets/images/chart.png',
+                  fit: BoxFit.cover,
+                  height: 150,
+                  width: 350,
+                ),
+              ),
+              Positioned(
+                left: 130,
+                top: 112,
+                child: Image.asset(
+                  'assets/images/bigbutton.png',
+                  fit: BoxFit.cover,
+                  height: 80,
+                  width: 80,
+                ),
+              ),
+            ],
+          ),
+          ExpansionTile(
+            title: const Text('접기'),
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: GridView.count(
+                  shrinkWrap: true,
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 10.0,
+                  children: List.generate(6, (index) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        print("Button $index pressed");
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            imagePaths[index],
+                            width: 60,
+                            height: 60,
+                            fit: BoxFit.cover,
+                          ),
+                          const SizedBox(height: 5),
+                          Text(
+                            "Button ${index + 1}",
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SwitchButton extends StatelessWidget {
+  final HomeController controller;
+
+  const SwitchButton({super.key, required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+      () => Row(
+        children: [
+          Switch(
+            value: controller.isSwitched.value,
+            onChanged: (bool newValue) {
+              controller.toogleSwitch(newValue);
+              print("Switch button changed");
+            },
+            activeColor: Colors.blue,
+            inactiveThumbColor: Colors.grey,
+            inactiveTrackColor: Colors.grey[300],
+          ),
+          const SizedBox(width: 10),
+          Text(
+            controller.isSwitched.value ? 'Auto' : 'Manual',
+            style: TextStyle(
+              fontSize: 18,
+              color: controller.isSwitched.value ? Colors.blue : Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RoomColumn extends StatelessWidget {
+  const RoomColumn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        RoomItem(imagePath: "assets/images/room1.png", roomName: "ROOM1"),
+        RoomItem(imagePath: "assets/images/room2.png", roomName: "ROOM2"),
+        RoomItem(imagePath: "assets/images/room3.png", roomName: "ROOM3"),
+      ],
+    );
+  }
+}
+
+class RoomItem extends StatelessWidget {
+  final String imagePath;
+  final String roomName;
+
+  const RoomItem({super.key, required this.imagePath, required this.roomName});
+
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Switch(
-          value: isSwitched,
-          onChanged: (value) {
-            setState(() {
-              isSwitched = value;
-            });
-          },
-          activeColor: Colors.blue,
-          inactiveThumbColor: Colors.grey,
-          inactiveTrackColor: Colors.grey[300],
+        SizedBox(
+          width: 22,
+          height: 22,
+          child: Image.asset(imagePath, fit: BoxFit.cover),
         ),
         const SizedBox(width: 10),
         Text(
-          isSwitched ? 'Auto' : 'Manual',
-          style: TextStyle(
-            fontSize: 18,
-            color: isSwitched ? Colors.blue : Colors.grey,
+          roomName,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -38,72 +189,3 @@ class _Room1State extends State<Room1Page> {
     );
   }
 }
-
-/* Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const SizedBox(height: 20),
-        SfRadialGauge(
-          axes: <RadialAxis>[
-            RadialAxis(
-              startAngle: 180, // Góc bắt đầu từ 180 độ
-              endAngle: 360, // Kết thúc ở 0 độ (nửa trên)
-              showLabels: true, // Ẩn các nhãn giá trị trục
-              showTicks: false, // Ẩn các tick mark
-              radiusFactor: 0.8, // Kích thước của gauge
-              canScaleToFit: true,
-              pointers: const <GaugePointer>[
-                // Sử dụng TextPointer để hiển thị giá trị
-                MarkerPointer(
-                  value: 60, // Giá trị hiện tại (có thể thay đổi)
-                  markerType: MarkerType.text,
-                  text: '60', // Giá trị hiển thị dưới dạng văn bản
-                  textStyle: GaugeTextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                  offsetUnit: GaugeSizeUnit.factor,
-                  markerOffset: -0.1, // Điều chỉnh vị trí văn bản
-                ),
-              ],
-              ranges: <GaugeRange>[
-                GaugeRange(
-                  startValue: 0,
-                  endValue: 25,
-                  color: Colors.green,
-                  startWidth: 20,
-                  endWidth: 20,
-                ),
-                GaugeRange(
-                  startValue: 25,
-                  endValue: 50,
-                  color: Colors.yellow,
-                  startWidth: 20,
-                  endWidth: 20,
-                ),
-                GaugeRange(
-                  startValue: 50,
-                  endValue: 75,
-                  color: Colors.orange,
-                  startWidth: 20,
-                  endWidth: 20,
-                ),
-                GaugeRange(
-                  startValue: 75,
-                  endValue: 100,
-                  color: Colors.black,
-                  startWidth: 20,
-                  endWidth: 20,
-                ),
-              ],
-            ),
-          ],
-        ),
-        const SizedBox(height: 20),
-        const Text(
-          "Room 1 Content",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-      ],
-    ); */
