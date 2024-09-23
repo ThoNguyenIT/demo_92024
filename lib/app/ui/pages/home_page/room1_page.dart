@@ -45,13 +45,11 @@ class _Room1State extends State<Room1Page> {
                 ),
               ),
               Positioned(
-                left: 130,
+                left: 102,
                 top: 112,
                 child: Image.asset(
-                  'assets/images/bigbutton.png',
-                  fit: BoxFit.cover,
-                  height: 80,
-                  width: 80,
+                  'assets/images/bigbutton2.png',
+                  fit: BoxFit.fill,
                 ),
               ),
             ],
