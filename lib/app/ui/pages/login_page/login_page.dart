@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_is_not_empty
 
+import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/login_controller.dart';
-import '../home_page/home_page.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});
@@ -123,7 +123,8 @@ class LoginPage extends GetView<LoginController> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomePage()),
+                            builder: (context) => const HomePage(),
+                          ),
                         );
                       }
                     },
