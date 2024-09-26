@@ -12,7 +12,9 @@ dependencies:
   get: ^4.6.6
   flutter_image_slideshow: ^0.1.6
   buttons_tabbar: ^1.3.13
-  flutter_svg: ^2.0.10+1
+  video_player: ^2.9.1
+  youtube_player_flutter: ^9.1.0
+
 
 dev_dependencies:
   flutter_test:
