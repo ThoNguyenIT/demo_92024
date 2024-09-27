@@ -1,7 +1,9 @@
+import 'package:demo_92024/app/bindings/cameraview_binding.dart';
 import 'package:demo_92024/app/bindings/home_binding.dart';
 import 'package:demo_92024/app/bindings/optionmenu_binding.dart';
 import 'package:demo_92024/app/bindings/realtimeview_binding.dart';
 import 'package:demo_92024/app/routes/app_routes.dart';
+import 'package:demo_92024/app/ui/pages/cameraview_page/cameraview_page.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:demo_92024/app/ui/pages/optionmenu_page/optionmenu_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
@@ -30,6 +32,11 @@ class AppPages {
       name: AppRoutes.optionmenu,
       page: () => const OptionmenuPage(),
       binding: OptionmenuBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.cameraview,
+      page: () => const CameraviewPage(),
+      binding: CameraviewBinding(),
     ),
   ];
 }

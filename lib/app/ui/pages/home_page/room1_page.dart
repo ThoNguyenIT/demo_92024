@@ -1,5 +1,9 @@
 import 'package:demo_92024/app/controllers/home_controller.dart';
+import 'package:demo_92024/app/ui/pages/cameraview_page/cameraview_page.dart';
+import 'package:demo_92024/app/ui/pages/degreeview_page/degreeview_page.dart';
+import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
+import 'package:demo_92024/app/ui/pages/smokeview_page/smokeview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -172,7 +176,10 @@ class Room1Page extends StatelessWidget {
                         Column(
                           children: [
                             InkWell(
-                              onTap: controller.image1btn,
+                              onTap: () {
+                                Get.to(() => const CameraviewPage());
+                              },
+                              /* controller.image1btn */
                               child: /* Obx(
                                 () =>  */
                                   Image.asset(
@@ -189,7 +196,10 @@ class Room1Page extends StatelessWidget {
                         Column(
                           children: [
                             InkWell(
-                              onTap: controller.image2btn,
+                              onTap: () {
+                                Get.to(() => PrerecordPage());
+                              },
+                              /* controller.image2btn, */
                               child: /* Obx(
                                 () =>  */
                                   Image.asset(
@@ -246,7 +256,10 @@ class Room1Page extends StatelessWidget {
                         Column(
                           children: [
                             InkWell(
-                              onTap: controller.image5btn,
+                              onTap: () {
+                                Get.to(() => const SmokeviewPage());
+                              },
+                              /* controller.image5btn, */
                               child: /* Obx(
                                 () =>  */
                                   Image.asset(
@@ -263,7 +276,10 @@ class Room1Page extends StatelessWidget {
                         Column(
                           children: [
                             InkWell(
-                              onTap: controller.image6btn,
+                              onTap: () {
+                                Get.to(() => const DegreeviewPage());
+                              },
+                              /* controller.image6btn, */
                               child: /* Obx(
                                 () =>  */
                                   Image.asset(
