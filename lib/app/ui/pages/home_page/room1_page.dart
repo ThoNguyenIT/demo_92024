@@ -8,7 +8,7 @@ class Room1Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HomeController controller = Get.find<HomeController>();
+    final HomeController controller = Get.put(HomeController());
 
     return Scaffold(
       body: SingleChildScrollView(
