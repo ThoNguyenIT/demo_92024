@@ -28,25 +28,27 @@ class DegreeviewPage extends GetView<DegreeviewController> {
               primaryXAxis: const CategoryAxis(),
               series: <LineSeries<Data, String>>[
                 LineSeries<Data, String>(
-                    dataSource: <Data>[
-                      Data('Jan', 35),
-                      Data('Feb', 28),
-                      Data('Mar', 34),
-                      Data('Apr', 32),
-                      Data('May', 40)
-                    ],
-                    xValueMapper: (Data data, _) => data.time,
-                    yValueMapper: (Data data, _) => data.temp),
+                  dataSource: <Data>[
+                    Data('Jan', 35),
+                    Data('Feb', 28),
+                    Data('Mar', 34),
+                    Data('Apr', 32),
+                    Data('May', 40)
+                  ],
+                  xValueMapper: (Data data, _) => data.time,
+                  yValueMapper: (Data data, _) => data.temp,
+                ),
                 LineSeries<Data, String>(
-                    dataSource: <Data>[
-                      Data('Jan', 40),
-                      Data('Feb', 80),
-                      Data('Mar', 42),
-                      Data('Apr', 65),
-                      Data('May', 76)
-                    ],
-                    xValueMapper: (Data data, _) => data.time,
-                    yValueMapper: (Data data, _) => data.temp)
+                  dataSource: <Data>[
+                    Data('Jan', 40),
+                    Data('Feb', 80),
+                    Data('Mar', 42),
+                    Data('Apr', 65),
+                    Data('May', 76)
+                  ],
+                  xValueMapper: (Data data, _) => data.time,
+                  yValueMapper: (Data data, _) => data.temp,
+                )
               ],
             ),
             Expanded(
