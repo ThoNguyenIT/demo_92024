@@ -3,4 +3,5 @@ class AppRoutes {
   static const home = '/home';
   static const realtimeview = '/realtimeview';
   static const optionmenu = '/optionmenu';
+  static const cameraview = '/cameraview';
 }
