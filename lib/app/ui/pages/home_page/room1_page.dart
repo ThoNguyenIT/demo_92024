@@ -8,7 +8,7 @@ class Room1Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HomeController controller = Get.find<HomeController>();
+    final HomeController controller = Get.put(HomeController());
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -354,7 +354,9 @@ class PopupDialog {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
+                                      left: 10,
+                                      right: 10,
+                                    ),
                                     child: Row(
                                       children: [
                                         Image.asset(
@@ -377,7 +379,9 @@ class PopupDialog {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
+                                      left: 10,
+                                      right: 10,
+                                    ),
                                     child: Row(
                                       children: [
                                         Image.asset(
@@ -400,7 +404,9 @@ class PopupDialog {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
+                                      left: 10,
+                                      right: 10,
+                                    ),
                                     child: Row(
                                       children: [
                                         Image.asset(
@@ -427,7 +433,9 @@ class PopupDialog {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
+                                      left: 10,
+                                      right: 10,
+                                    ),
                                     child: Row(
                                       children: [
                                         Image.asset(
@@ -450,7 +458,9 @@ class PopupDialog {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
+                                      left: 10,
+                                      right: 10,
+                                    ),
                                     child: Row(
                                       children: [
                                         Image.asset(
@@ -473,7 +483,9 @@ class PopupDialog {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
+                                      left: 10,
+                                      right: 10,
+                                    ),
                                     child: Row(
                                       children: [
                                         Image.asset(
