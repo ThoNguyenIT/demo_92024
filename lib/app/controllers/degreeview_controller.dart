@@ -1,7 +1,3 @@
-
 import 'package:get/get.dart';
 
-class DegreeviewController extends GetxController {
-
-}
-  
+class DegreeviewController extends GetxController {}
