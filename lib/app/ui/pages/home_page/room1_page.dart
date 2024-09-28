@@ -5,6 +5,7 @@ import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smokeview_page.dart';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:get/get.dart';
 
 class Room1Page extends StatelessWidget {
@@ -22,14 +23,6 @@ class Room1Page extends StatelessWidget {
               height: 350,
               child: Stack(
                 children: [
-                  Positioned(
-                    top: 80,
-                    left: 30,
-                    child: Image.asset(
-                      'assets/images/chart.png',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
                   Positioned(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -143,6 +136,69 @@ class Room1Page extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 300,
+              width: double.infinity,
+              child: Center(
+                child: SfRadialGauge(
+                  axes: <RadialAxis>[
+                    RadialAxis(
+                      showLabels: false,
+                      showAxisLine: false,
+                      showTicks: false,
+                      minimum: 0,
+                      maximum: 180,
+                      ranges: <GaugeRange>[
+                        GaugeRange(
+                            startValue: 0,
+                            endValue: 45,
+                            color: const Color(0xFFFE2A25),
+                            label: 'mức 1',
+                            sizeUnit: GaugeSizeUnit.factor,
+                            labelStyle: const GaugeTextStyle(
+                                fontFamily: 'Times', fontSize: 20),
+                            startWidth: 0.65,
+                            endWidth: 0.65),
+                        GaugeRange(
+                          startValue: 45,
+                          endValue: 90,
+                          color: const Color.fromARGB(255, 210, 161, 25),
+                          label: 'mức 2',
+                          labelStyle: const GaugeTextStyle(
+                              fontFamily: 'Times', fontSize: 20),
+                          startWidth: 0.65,
+                          endWidth: 0.65,
+                          sizeUnit: GaugeSizeUnit.factor,
+                        ),
+                        GaugeRange(
+                          startValue: 90,
+                          endValue: 135,
+                          color: const Color.fromARGB(255, 1, 39, 85),
+                          label: 'mức 3',
+                          labelStyle: const GaugeTextStyle(
+                              fontFamily: 'Times', fontSize: 20),
+                          sizeUnit: GaugeSizeUnit.factor,
+                          startWidth: 0.65,
+                          endWidth: 0.65,
+                        ),
+                        GaugeRange(
+                          startValue: 135,
+                          endValue: 180,
+                          color: const Color(0xFF00AB47),
+                          label: 'mức 4',
+                          labelStyle: const GaugeTextStyle(
+                              fontFamily: 'Times', fontSize: 20),
+                          sizeUnit: GaugeSizeUnit.factor,
+                          startWidth: 0.65,
+                          endWidth: 0.65,
+                        ),
+                      ],
+                      pointers: const <GaugePointer>[NeedlePointer(value: 60)],
+                    )
+                  ],
+                ),
+              ),
+            ),
             ConstrainedBox(
               constraints: const BoxConstraints(minWidth: double.infinity),
               child: Theme(
@@ -197,7 +253,7 @@ class Room1Page extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () {
-                                Get.to(() => PrerecordPage());
+                                Get.to(() => const PrerecordPage());
                               },
                               /* controller.image2btn, */
                               child: /* Obx(
