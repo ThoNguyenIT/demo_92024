@@ -23,34 +23,31 @@ class HomePage extends GetView<HomeController> {
         ),
         drawer: Drawer(
           child: ListView(
-            padding: const EdgeInsets.only(top: 50),
             children: <Widget>[
               Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        '설정',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: TextButton(
+                    onPressed: () {
+                      Get.to(() => const OptionmenuPage());
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '설정',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.settings_applications_rounded,
-                        ),
-                        onPressed: () {
-                          Get.to(() => const OptionmenuPage());
-                        },
-                      ),
-                    ],
+                        Icon(Icons.settings_applications_rounded),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -205,27 +202,27 @@ class HomePage extends GetView<HomeController> {
                 tabs: [
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 35.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        "방 1",
+                        "ROOM 1",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 35.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        "방 2",
+                        "ROOM 2",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 35.0),
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        "방 3",
+                        "ROOM 3",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -236,7 +233,7 @@ class HomePage extends GetView<HomeController> {
             const Expanded(
               child: TabBarView(
                 children: [
-                  Room1Page(), // Gọi Room1Page ở đây
+                  Room1Page(),
                   Center(child: Text('Content for Room2')),
                   Center(child: Text('Content for Room3')),
                 ],
