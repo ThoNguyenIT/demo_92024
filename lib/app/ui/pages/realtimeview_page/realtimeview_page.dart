@@ -24,7 +24,7 @@ class RealtimeviewController extends GetxController {
       initialVideoId: videoId!,
       flags: const YoutubePlayerFlags(
         autoPlay: true, // Tự động phát
-        mute: false, // Không tắt tiếng
+        mute: true,
         disableDragSeek: false, // Cho phép kéo để tua video
         loop: false, // Không lặp lại video
         isLive: true, // Đánh dấu là video trực tiếp

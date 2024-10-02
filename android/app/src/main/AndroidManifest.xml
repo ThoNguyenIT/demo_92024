@@ -2,7 +2,11 @@
     <application
         android:label="demo_92024"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:enableOnBackInvokedCallback="true"
+        >
+        <!-- https://stackoverflow.com/questions/73782320/onbackinvokedcallback-is-not-enabled-for-the-application-in-set-androidenableo -->
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

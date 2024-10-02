@@ -65,7 +65,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                     ),
                     Obx(
                       () => Switch(
-                        value: controller.isSwitched.value,
+                        value: controller.isAutoMode.value,
                         onChanged: (bool newValue) {
                           controller.toogleSwitch(newValue);
                         },

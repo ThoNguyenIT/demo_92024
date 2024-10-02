@@ -3,7 +3,7 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  var isSwitched = false.obs;
+  var isAutoMode = false.obs;
   //var isImage1btnPressed = false.obs;
   var isImage2btnPressed = false.obs;
   var isImage3btnPressed = false.obs;
@@ -12,8 +12,8 @@ class HomeController extends GetxController {
   var isImage6btnPressed = false.obs;
 
   void toogleSwitch(bool value) {
-    isSwitched.value = value;
-    print("Switch button changed: $value");
+    isAutoMode.value = value;
+    print("Auto/Manual was changed: $value");
   }
 
   /* void image1btn() {
