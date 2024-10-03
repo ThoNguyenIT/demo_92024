@@ -1,5 +1,4 @@
 // ignore_for_file: avoid_print
-
 import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

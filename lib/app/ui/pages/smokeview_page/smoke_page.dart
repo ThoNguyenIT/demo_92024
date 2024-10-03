@@ -1,19 +1,14 @@
-// ignore_for_file: unused_import
-
-import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../../../controllers/cameraview_controller.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import '../../../controllers/smoke_controller.dart';
 
-class CameraviewPage extends GetView<CameraviewController> {
-  const CameraviewPage({super.key});
+class SmokePage extends GetView<SmokeController> {
+  const SmokePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CameraviewController());
-    //final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -29,30 +24,28 @@ class CameraviewPage extends GetView<CameraviewController> {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
-              height: 400,
-              width: double.infinity,
-              child: YoutubePlayer(
-                controller: controller.youtubeController,
-                showVideoProgressIndicator: true,
-              ),
-            ),
-            SizedBox(
-              height: 50,
-              width: double.infinity,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: imagePaths.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Row(
-                    children: [
-                      Image.asset(
-                        imagePaths[index],
-                      ),
-                    ],
-                  );
-                },
-              ),
+            SfCartesianChart(
+              primaryXAxis: const CategoryAxis(),
+              series: <LineSeries<Data, String>>[
+                LineSeries<Data, String>(
+                  dataSource: <Data>[
+                    Data('1', 0),
+                    Data('2', 0),
+                    Data('3', 0),
+                    Data('4', 1),
+                    Data('5', 1),
+                    Data('6', 0),
+                    Data('7', 1),
+                    Data('8', 0),
+                    Data('9', 0),
+                    Data('10', 1),
+                    Data('11', 0),
+                    Data('12', 1),
+                  ],
+                  xValueMapper: (Data data, _) => data.time,
+                  yValueMapper: (Data data, _) => data.onoff,
+                ),
+              ],
             ),
             Expanded(
               child: ListView(
@@ -116,16 +109,8 @@ class CameraviewPage extends GetView<CameraviewController> {
   }
 }
 
-List<String> imagePaths = [
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-  'assets/images/imagelist.png',
-];
+class Data {
+  Data(this.time, this.onoff);
+  final String time;
+  final double onoff;
+}

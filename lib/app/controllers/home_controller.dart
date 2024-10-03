@@ -23,4 +23,12 @@ class HomeController extends GetxController {
       val!.isActive = !val.isActive;
     });
   }
+
+  void setLevel(int newLevel) {
+    currentData.update(
+      (val) {
+        val!.level = newLevel;
+      },
+    );
+  }
 }

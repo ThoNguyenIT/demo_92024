@@ -2,10 +2,10 @@ import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import '../../../controllers/degreeview_controller.dart';
+import '../../../controllers/degree_controller.dart';
 
-class DegreeviewPage extends GetView<DegreeviewController> {
-  const DegreeviewPage({super.key});
+class DegreePage extends GetView<DegreeController> {
+  const DegreePage({super.key});
 
   @override
   Widget build(BuildContext context) {

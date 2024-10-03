@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class CameraviewController extends GetxController {
+class RecordController extends GetxController {
   late YoutubePlayerController youtubeController;
 
   @override
   void onInit() {
     super.onInit();
-    const videoUrl = "https://www.youtube.com/watch?v=jfKfPfyJRdk";
+    const videoUrl = "https://www.youtube.com/watch?v=kj_tldMmu4w";
     final videoId = YoutubePlayer.convertUrlToId(videoUrl);
     youtubeController = YoutubePlayerController(
       initialVideoId: videoId!,
@@ -16,18 +16,12 @@ class CameraviewController extends GetxController {
         mute: false,
         disableDragSeek: false,
         loop: false,
-        isLive: true,
+        isLive: false,
         enableCaption: false,
         controlsVisibleAtStart: false,
-        hideControls: true,
+        hideControls: false,
         showLiveFullscreenButton: false,
       ),
     );
   }
-
-  /* @override
-  void onClose() {
-    youtubeController.dispose();
-    super.onClose();
-  } */
 }

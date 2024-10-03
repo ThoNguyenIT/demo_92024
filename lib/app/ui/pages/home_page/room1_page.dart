@@ -1,10 +1,12 @@
 // ignore_for_file: unused_import, library_private_types_in_public_api
+import 'package:badges/badges.dart' as badges;
 import 'package:demo_92024/app/controllers/home_controller.dart';
-import 'package:demo_92024/app/ui/pages/cameraview_page/cameraview_page.dart';
-import 'package:demo_92024/app/ui/pages/degreeview_page/degreeview_page.dart';
-import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
+import 'package:demo_92024/app/ui/global_widgets/global_badge.dart';
+import 'package:demo_92024/app/ui/pages/camera_page/camera_page.dart';
+import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
+import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
-import 'package:demo_92024/app/ui/pages/smokeview_page/smokeview_page.dart';
+import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
@@ -22,13 +24,12 @@ class _Room1PageState extends State<Room1Page> {
   @override
   Widget build(BuildContext context) {
     final HomeController controller = Get.put(HomeController());
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +122,6 @@ class _Room1PageState extends State<Room1Page> {
                 ],
               ),
             ),
-            SizedBox(height: 15),
             Center(
               child: InkWell(
                 onTap: () {
@@ -133,19 +133,6 @@ class _Room1PageState extends State<Room1Page> {
                     fit: BoxFit.contain,
                   ),
                 ),
-              ),
-            ),
-            SizedBox(height: 15),
-            TextButton(
-              onPressed: () {
-                PopupDialog.showPopup(context);
-              },
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll<Color>(Colors.blue),
-              ),
-              child: Text(
-                'Pop Dialog from sns',
-                style: TextStyle(color: Colors.white),
               ),
             ),
             SizedBox(height: 15),
@@ -172,122 +159,139 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             AnimatedContainer(
               duration: Duration(milliseconds: 500),
               curve: Curves.slowMiddle,
-              height: isExpanded ? 300 : 0,
-              child: SingleChildScrollView(
-                child: Column(
+              child: Visibility(
+                visible: isExpanded,
+                child: Wrap(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 185, 178, 178),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Column(
                           children: [
-                            InkWell(
-                              onTap: () {
-                                Get.to(() => const CameraviewPage());
-                              },
-                              child: Image.asset(
-                                'assets/images/1.png',
-                                width: 70,
-                                height: 70,
-                                fit: BoxFit.cover,
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 20, bottom: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  GlobalBadge(
+                                    showBadge: true,
+                                    onTap: () {
+                                      Get.to(() => const CameraPage());
+                                    },
+                                    child: Image.asset(
+                                      'assets/images/1.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  GlobalBadge(
+                                    showBadge: false,
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/images/2.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  GlobalBadge(
+                                    showBadge: true,
+                                    onTap: () {
+                                      Get.to(() => const RecordPage());
+                                    },
+                                    child: Image.asset(
+                                      'assets/images/3.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            const Text('AI 카메라'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Get.to(() => const PrerecordPage());
-                              },
-                              child: Image.asset(
-                                'assets/images/2.png',
-                                width: 70,
-                                height: 70,
-                                fit: BoxFit.cover,
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10, bottom: 20),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  GlobalBadge(
+                                    showBadge: false,
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/images/4.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  GlobalBadge(
+                                    showBadge: true,
+                                    onTap: () {
+                                      Get.to(() => const SmokePage());
+                                    },
+                                    child: Image.asset(
+                                      'assets/images/5.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  GlobalBadge(
+                                    showBadge: true,
+                                    onTap: () {
+                                      Get.to(() => const DegreePage());
+                                    },
+                                    child: Image.asset(
+                                      'assets/images/6.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            const Text('열화상 카메라'),
                           ],
                         ),
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Image.asset(
-                                'assets/images/3.png',
-                                width: 70,
-                                height: 70,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text('기록'),
-                          ],
-                        ),
-                      ],
+                      ),
                     ),
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Image.asset(
-                                'assets/images/4.png',
-                                width: 70,
-                                height: 70,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text('불꽃 센서'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Get.to(() => const SmokeviewPage());
-                              },
-                              child: Image.asset(
-                                'assets/images/5.png',
-                                width: 70,
-                                height: 70,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text('연기 센서'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Get.to(() => const DegreeviewPage());
-                              },
-                              child: Image.asset(
-                                'assets/images/6.png',
-                                width: 70,
-                                height: 70,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text('온습도 센서'),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
                   ],
                 ),
               ),
             ),
+            SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                PopupDialog.showPopup(context);
+              },
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll<Color>(Colors.blue),
+              ),
+              child: Text(
+                'Pop Dialog from sns',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            /* ...List.generate(
+              5,
+              (index) => ElevatedButton(
+                onPressed: () => controller.setLevel(index + 1),
+                child: Text('Set Level ${index + 1}'),
+              ),
+            ), */
           ],
         ),
       ),
