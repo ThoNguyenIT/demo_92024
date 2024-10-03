@@ -7,7 +7,7 @@ class PrerecordController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    const videoUrl = "https://www.youtube.com/watch?v=2NuipO7j2tA";
+    const videoUrl = "https://www.youtube.com/watch?v=kj_tldMmu4w";
     final videoId = YoutubePlayer.convertUrlToId(videoUrl);
     youtubeController = YoutubePlayerController(
       initialVideoId: videoId!,

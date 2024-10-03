@@ -283,16 +283,33 @@ class RealtimeviewPage extends StatelessWidget {
                         ],
                       ),
                       Center(
-                        child: InkWell(
-                          onTap: () {
-                            PopupDialog.showPopup(context);
-                          },
-                          child: Obx(
-                            () => Image.asset(
-                              controller2.currentData.value.imagePath,
-                              fit: BoxFit.contain,
-                            ),
+                        child: Obx(
+                          () => Image.asset(
+                            controller2.currentData.value.imagePath,
+                            fit: BoxFit.contain,
                           ),
+                        ),
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          PopupDialog.showPopup(context);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 255, 17, 0),
+                        ),
+                        label: Text(
+                          '소 화',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        icon: Image.asset(
+                          'assets/icons/extinguisher.png',
+                          width: 20,
+                          height: 20,
                         ),
                       ),
                       SizedBox(
@@ -336,6 +353,28 @@ class PopupDialog {
             height: 300,
             child: Column(
               children: [
+                SizedBox(
+                  height: 160,
+                  width: 350,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Image.asset(
+                      'assets/images/home1.png',
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15),
+                Center(
+                  child: Text(
+                    '정말로 끄시겠습니까?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
