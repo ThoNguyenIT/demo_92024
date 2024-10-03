@@ -136,6 +136,19 @@ class _Room1PageState extends State<Room1Page> {
               ),
             ),
             SizedBox(height: 15),
+            TextButton(
+              onPressed: () {
+                PopupDialog.showPopup(context);
+              },
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll<Color>(Colors.blue),
+              ),
+              child: Text(
+                'Pop Dialog from sns',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {
                 setState(

@@ -1,3 +1,6 @@
+// ignore_for_file: unused_import
+
+import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +13,7 @@ class CameraviewPage extends GetView<CameraviewController> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CameraviewController());
+    //final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -44,8 +48,6 @@ class CameraviewPage extends GetView<CameraviewController> {
                     children: [
                       Image.asset(
                         imagePaths[index],
-                        /* width: 80,
-                        height: 50, */
                       ),
                     ],
                   );
