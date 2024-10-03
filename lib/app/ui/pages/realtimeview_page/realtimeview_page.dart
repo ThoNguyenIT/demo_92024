@@ -340,8 +340,7 @@ class RealtimeviewPage extends StatelessWidget {
 
 class PopupDialog {
   static void showPopup(BuildContext context) {
-    final RealtimeviewController controller =
-        Get.find<RealtimeviewController>();
+    final RealtimeviewController controller = Get.find<RealtimeviewController>();
     showDialog(
       context: context,
       builder: (BuildContext context) {

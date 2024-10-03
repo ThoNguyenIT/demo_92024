@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,48 +1,26 @@
 // ignore_for_file: avoid_print
-
+import 'package:demo_92024/app/data/models/level_data.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   var isAutoMode = false.obs;
-  //var isImage1btnPressed = false.obs;
-  var isImage2btnPressed = false.obs;
-  var isImage3btnPressed = false.obs;
-  var isImage4btnPressed = false.obs;
-  //var isImage5btnPressed = false.obs;
-  var isImage6btnPressed = false.obs;
+  var isExpanded = false.obs;
+
+  var currentData = LevelData(isActive: false, level: 4).obs;
 
   void toogleSwitch(bool value) {
     isAutoMode.value = value;
     print("Auto/Manual was changed: $value");
   }
 
-  /* void image1btn() {
-    isImage1btnPressed.value = !isImage1btnPressed.value;
-    print("Image button 1 pressed: ${isImage1btnPressed.value}");
-  } */
-
-  void image2btn() {
-    isImage2btnPressed.value = !isImage2btnPressed.value;
-    print("Image button 2 pressed: ${isImage2btnPressed.value}");
+  void toggleExpaned(bool value) {
+    isExpanded.value = value;
+    print("isExpanded was changed: $value");
   }
 
-  void image3btn() {
-    isImage3btnPressed.value = !isImage3btnPressed.value;
-    print("Image button 3 pressed: ${isImage3btnPressed.value}");
-  }
-
-  void image4btn() {
-    isImage4btnPressed.value = !isImage4btnPressed.value;
-    print("Image button 4 pressed: ${isImage4btnPressed.value}");
-  }
-
-  /* void image5btn() {
-    isImage5btnPressed.value = !isImage5btnPressed.value;
-    print("Image button 5 pressed: ${isImage5btnPressed.value}");
-  } */
-
-  void image6btn() {
-    isImage6btnPressed.value = !isImage6btnPressed.value;
-    print("Image button 6 pressed: ${isImage6btnPressed.value}");
+  void toggleActive() {
+    currentData.update((val) {
+      val!.isActive = !val.isActive;
+    });
   }
 }
