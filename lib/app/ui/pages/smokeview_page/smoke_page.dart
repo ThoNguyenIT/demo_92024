@@ -1,8 +1,9 @@
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:demo_92024/app/controllers/smoke_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import '../../../controllers/smoke_controller.dart';
+import 'dart:math';
+import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 
 class SmokePage extends GetView<SmokeController> {
   const SmokePage({super.key});
@@ -24,30 +25,43 @@ class SmokePage extends GetView<SmokeController> {
       body: SafeArea(
         child: Column(
           children: [
-            SfCartesianChart(
-              primaryXAxis: const CategoryAxis(),
-              series: <LineSeries<Data, String>>[
-                LineSeries<Data, String>(
-                  dataSource: <Data>[
-                    Data('1', 0),
-                    Data('2', 0),
-                    Data('3', 0),
-                    Data('4', 1),
-                    Data('5', 1),
-                    Data('6', 0),
-                    Data('7', 1),
-                    Data('8', 0),
-                    Data('9', 0),
-                    Data('10', 1),
-                    Data('11', 0),
-                    Data('12', 1),
-                  ],
-                  xValueMapper: (Data data, _) => data.time,
-                  yValueMapper: (Data data, _) => data.onoff,
+            SizedBox(
+              width: double.infinity,
+              child: SfCartesianChart(
+                enableAxisAnimation: true,
+                primaryXAxis: CategoryAxis(
+                  interval: 1,
+                  labelIntersectAction: AxisLabelIntersectAction.multipleRows,
                 ),
-              ],
+                primaryYAxis: NumericAxis(
+                  maximum: 0.1,
+                  minimum: 0,
+                  interval: 0.1,
+                  isVisible: false,
+                  autoScrollingMode: AutoScrollingMode.end,
+                ),
+                zoomPanBehavior: ZoomPanBehavior(
+                  //maximumZoomLevel: 0.1,
+                  enablePanning: true,
+                  enablePinching: true,
+                  zoomMode: ZoomMode.x,
+                ),
+                series: <ColumnSeries<SmokeData, String>>[
+                  ColumnSeries<SmokeData, String>(
+                    spacing: 0,
+                    width: 1,
+                    xValueMapper: (SmokeData data, _) =>
+                        '${data.time.hour.toString().padLeft(2, '0')}h${data.time.minute.toString().padLeft(2, '0')}',
+                    yValueMapper: (SmokeData data, _) => 0.1,
+                    pointColorMapper: (SmokeData data, _) =>
+                        data.on ? Colors.red : Colors.blue,
+                    dataSource: generateData(),
+                  ),
+                ],
+              ),
             ),
             Expanded(
+              flex: 4,
               child: ListView(
                 children: [
                   Container(
@@ -74,31 +88,6 @@ class SmokePage extends GetView<SmokeController> {
                       ],
                     ),
                   ),
-                  for (var i = 0; i < 100; i++)
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          width: 1,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      child: const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              "2023.08.06",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
                 ],
               ),
             ),
@@ -107,10 +96,22 @@ class SmokePage extends GetView<SmokeController> {
       ),
     );
   }
+
+  List<SmokeData> generateData() {
+    var rng = Random();
+    List<SmokeData> allData = [];
+    for (int hour = 0; hour < 24; hour++) {
+      for (int minute = 0; minute < 60; minute++) {
+        allData
+            .add(SmokeData(DateTime(2023, 8, 7, hour, minute), rng.nextBool()));
+      }
+    }
+    return allData;
+  }
 }
 
-class Data {
-  Data(this.time, this.onoff);
-  final String time;
-  final double onoff;
+class SmokeData {
+  SmokeData(this.time, this.on);
+  final DateTime time;
+  final bool on;
 }

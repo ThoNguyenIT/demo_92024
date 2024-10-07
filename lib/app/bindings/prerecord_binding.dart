@@ -1,9 +1,9 @@
+import 'package:demo_92024/app/controllers/prerecord_controller.dart';
 import 'package:get/get.dart';
-import '../controllers/record_controller.dart';
 
-class RecordBinding implements Bindings {
+class PrerecordBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<RecordController>(() => RecordController());
+    Get.lazyPut<PrerecordController>(() => PrerecordController());
   }
 }

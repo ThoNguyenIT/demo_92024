@@ -12,6 +12,7 @@ import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:demo_92024/app/ui/pages/login_page/login_page.dart';
 import 'package:demo_92024/app/ui/pages/optionmenu_page/optionmenu_page.dart';
+import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
@@ -47,18 +48,20 @@ class AppPages {
     GetPage(
       name: AppRoutes.record,
       page: () => const RecordPage(),
-      binding: RecordBinding(),
+      binding: PrerecordBinding(),
     ),
-    /* GetPage(
+    GetPage(
       name: AppRoutes.prerecord,
       page: () => const PrerecordPage(),
       binding: PrerecordBinding(),
     ),
+    /*
     GetPage(
       name: AppRoutes.spark,
       page: () => const SparkPage(),
       binding: SparkBinding(),
-    ), */
+    ),
+    */
     GetPage(
       name: AppRoutes.smoke,
       page: () => const SmokePage(),

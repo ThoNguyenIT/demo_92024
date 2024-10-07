@@ -201,16 +201,18 @@ class HomePage extends GetView<HomeController> {
                 tabs: [
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        "ROOM 1",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Flexible(
+                        child: Text(
+                          "ROOM 1",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
                         "ROOM 2",
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -219,7 +221,7 @@ class HomePage extends GetView<HomeController> {
                   ),
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
                         "ROOM 3",
                         style: TextStyle(fontWeight: FontWeight.bold),

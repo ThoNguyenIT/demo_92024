@@ -1,17 +1,16 @@
-// ignore_for_file: avoid_print
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
-import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
+import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../../../controllers/record_controller.dart';
+import '../../../controllers/prerecord_controller.dart';
 
-class RecordPage extends GetView<RecordController> {
-  const RecordPage({super.key});
+class PrerecordPage extends GetView<PrerecordController> {
+  const PrerecordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(RecordController());
+    final controller = Get.put(PrerecordController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -44,7 +43,7 @@ class RecordPage extends GetView<RecordController> {
                     color: Colors.white,
                     border: Border.all(
                       width: 3,
-                      color: Colors.blue,
+                      color: Colors.grey,
                     ),
                   ),
                   child: Padding(
@@ -53,7 +52,7 @@ class RecordPage extends GetView<RecordController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          "감지/영상 보기",
+                          "2023.08.07",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -66,15 +65,12 @@ class RecordPage extends GetView<RecordController> {
                             size: 30,
                             color: Colors.black,
                           ),
-                          onPressed: () {
-                            Get.to(() => const PrerecordPage());
-                          },
+                          onPressed: () {},
                         ),
                       ],
                     ),
                   ),
                 ),
-                //for (var i = 0; i < 6; i++)
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -89,7 +85,7 @@ class RecordPage extends GetView<RecordController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          "타임랩스 영상 보기",
+                          "2023.08.06",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -103,7 +99,7 @@ class RecordPage extends GetView<RecordController> {
                             color: Colors.black,
                           ),
                           onPressed: () {
-                            Get.to(() => const PrerecordPage());
+                            Get.to(() => const RecordPage());
                           },
                         ),
                       ],
