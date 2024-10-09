@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import, library_private_types_in_public_api
-import 'package:badges/badges.dart' as badges;
 import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:demo_92024/app/ui/global_widgets/global_badge.dart';
 import 'package:demo_92024/app/ui/pages/camera_page/camera_page.dart';
@@ -9,7 +7,6 @@ import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class Room1Page extends StatefulWidget {
   const Room1Page({super.key});

@@ -28,7 +28,7 @@ class SmokePage extends GetView<SmokeController> {
             SizedBox(
               width: double.infinity,
               child: SfCartesianChart(
-                enableAxisAnimation: true,
+                //enableAxisAnimation: true,
                 primaryXAxis: CategoryAxis(
                   interval: 1,
                   labelIntersectAction: AxisLabelIntersectAction.multipleRows,
