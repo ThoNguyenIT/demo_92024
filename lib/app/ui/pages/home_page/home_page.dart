@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_print
 import 'package:demo_92024/app/ui/pages/home_page/room1_page.dart';
 import 'package:demo_92024/app/ui/pages/optionmenu_page/optionmenu_page.dart';
 import 'package:flutter/material.dart';
@@ -58,13 +57,16 @@ class HomePage extends GetView<HomeController> {
               children: [
                 ImageSlideshow(
                   width: double.infinity,
-                  height: 400,
+                  height: MediaQuery.of(context).size.height / 2.2,
                   initialPage: 0,
                   indicatorColor: Colors.blue,
                   indicatorBackgroundColor: Colors.grey,
                   autoPlayInterval: 9000,
                   isLoop: true,
                   children: [
+                    Image.asset('assets/images/home.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/home1.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/home2.png', fit: BoxFit.cover),
                     Image.asset('assets/images/home.png', fit: BoxFit.cover),
                     Image.asset('assets/images/home1.png', fit: BoxFit.cover),
                     Image.asset('assets/images/home2.png', fit: BoxFit.cover),
@@ -202,11 +204,9 @@ class HomePage extends GetView<HomeController> {
                   Tab(
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Flexible(
-                        child: Text(
-                          "ROOM 1",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                      child: Text(
+                        "ROOM 1",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
