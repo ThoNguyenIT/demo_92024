@@ -6,6 +6,7 @@ import 'package:demo_92024/app/bindings/optionmenu_binding.dart';
 import 'package:demo_92024/app/bindings/prerecord_binding.dart';
 import 'package:demo_92024/app/bindings/realtimeview_binding.dart';
 import 'package:demo_92024/app/bindings/smoke_binding.dart';
+import 'package:demo_92024/app/bindings/spark_binding.dart';
 import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:demo_92024/app/ui/pages/camera_page/camera_page.dart';
 import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
@@ -16,6 +17,7 @@ import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
+import 'package:demo_92024/app/ui/pages/spark_page/spark_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppPages {
@@ -55,13 +57,11 @@ class AppPages {
       page: () => const PrerecordPage(),
       binding: PrerecordBinding(),
     ),
-    /*
     GetPage(
       name: AppRoutes.spark,
       page: () => const SparkPage(),
       binding: SparkBinding(),
     ),
-    */
     GetPage(
       name: AppRoutes.smoke,
       page: () => const SmokePage(),

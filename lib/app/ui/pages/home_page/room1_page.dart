@@ -5,12 +5,12 @@ import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
+import 'package:demo_92024/app/ui/pages/spark_page/spark_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Room1Page extends StatefulWidget {
   const Room1Page({super.key});
-
   @override
   _Room1PageState createState() => _Room1PageState();
 }
@@ -22,6 +22,7 @@ class _Room1PageState extends State<Room1Page> {
   Widget build(BuildContext context) {
     final HomeController controller = Get.put(HomeController());
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -158,8 +159,8 @@ class _Room1PageState extends State<Room1Page> {
             ),
             SizedBox(height: 10),
             AnimatedContainer(
-              duration: Duration(milliseconds: 500),
-              curve: Curves.slowMiddle,
+              duration: Duration(milliseconds: 5000),
+              curve: Curves.fastLinearToSlowEaseIn,
               child: Visibility(
                 visible: isExpanded,
                 child: Wrap(
@@ -168,8 +169,8 @@ class _Room1PageState extends State<Room1Page> {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 185, 178, 178),
-                          borderRadius: BorderRadius.circular(15),
+                          color: const Color.fromARGB(255, 215, 208, 208),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Column(
                           children: [
@@ -226,7 +227,9 @@ class _Room1PageState extends State<Room1Page> {
                                 children: [
                                   GlobalBadge(
                                     showBadge: false,
-                                    onTap: () {},
+                                    onTap: () {
+                                      Get.to(() => const SparkPage());
+                                    },
                                     child: Image.asset(
                                       'assets/images/4.png',
                                       width: 100,
