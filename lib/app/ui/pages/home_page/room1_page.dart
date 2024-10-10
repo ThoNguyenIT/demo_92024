@@ -303,8 +303,8 @@ class PopupDialog {
       builder: (BuildContext context) {
         return AlertDialog(
           content: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.height * 0.5,
+            width: MediaQuery.of(context).size.width * 2,
+            height: MediaQuery.of(context).size.height * 2,
             child: Column(
               children: <Widget>[
                 const Row(

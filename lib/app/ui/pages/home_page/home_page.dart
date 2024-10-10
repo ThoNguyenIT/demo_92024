@@ -202,11 +202,9 @@ class HomePage extends GetView<HomeController> {
                   Tab(
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Flexible(
-                        child: Text(
-                          "ROOM 1",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                      child: Text(
+                        "ROOM 1",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
