@@ -1,3 +1,4 @@
+import 'package:demo_92024/app/data/models/raw_data.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ class SparkPage extends GetView<SparkController> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SparkController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -24,72 +26,48 @@ class SparkPage extends GetView<SparkController> {
       body: SafeArea(
         child: Column(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: SizedBox(
-                /* height: MediaQuery.of(context).size.width * 4, */
-                width: MediaQuery.of(context).size.width * 3,
-                child: SfCartesianChart(
-                  primaryXAxis: CategoryAxis(
-                    interval: 1,
-                    labelRotation: -45,
-                    labelIntersectAction: AxisLabelIntersectAction.multipleRows,
-                  ),
-                  primaryYAxis: NumericAxis(
-                    maximum: 1,
-                    minimum: 0,
-                    interval: 1,
-                    isVisible: false,
-                  ),
-                  zoomPanBehavior: ZoomPanBehavior(
-                    enablePanning: true,
-                    enablePinching: true,
-                    zoomMode: ZoomMode.x,
-                  ),
-                  series: <ColumnSeries<Data, String>>[
-                    ColumnSeries<Data, String>(
-                      spacing: 0,
-                      width: 1,
-                      xValueMapper: (Data data, _) => data.time,
-                      yValueMapper: (Data data, _) => 1,
-                      pointColorMapper: (Data data, _) =>
-                          data.on ? Colors.red : Colors.blue,
-                      dataSource: <Data>[
-                        Data('00h00', false),
-                        Data('00h01', false),
-                        Data('00h02', false),
-                        Data('00h03', false),
-                        Data('00h04', false),
-                        Data('00h05', false),
-                        Data('00h06', false),
-                        Data('00h07', false),
-                        Data('00h08', false),
-                        Data('00h09', false),
-                        Data('00h10', false),
-                        Data('00h11', false),
-                        Data('00h12', false),
-                        Data('00h13', false),
-                        Data('00h14', false),
-                        Data('00h15', false),
-                        Data('00h16', true),
-                        Data('00h17', true),
-                        Data('00h18', true),
-                        Data('00h19', true),
-                        Data('00h20', true),
-                        Data('00h21', true),
-                        Data('00h22', true),
-                        Data('00h23', true),
-                        Data('00h24', true),
-                        Data('00h25', true),
-                        Data('00h26', true),
-                        Data('00h27', true),
-                        Data('00h28', true),
-                        Data('00h29', true),
-                        Data('00h30', true),
-                      ],
-                    ),
-                  ],
-                ),
+            Expanded(
+              flex: 2,
+              child: Obx(
+                () => controller.sparkData.isNotEmpty
+                    ? SfCartesianChart(
+                        primaryXAxis: CategoryAxis(
+                          isVisible: false,
+                        ),
+                        primaryYAxis: NumericAxis(
+                          maximum: 1,
+                          minimum: 0,
+                          interval: 1,
+                          isVisible: false,
+                        ),
+                        trackballBehavior: TrackballBehavior(
+                          enable: true,
+                          lineWidth: 4,
+                          lineColor: Colors.amber,
+                          shouldAlwaysShow: true,
+                          activationMode: ActivationMode.singleTap,
+                          tooltipDisplayMode:
+                              TrackballDisplayMode.groupAllPoints,
+                          tooltipSettings: InteractiveTooltip(
+                            borderColor: Colors.amber,
+                            borderWidth: 4,
+                            format: 'Status: point.y',
+                          ),
+                        ),
+                        series: <ColumnSeries<SparkData, String>>[
+                          ColumnSeries<SparkData, String>(
+                            dataSource: controller.sparkData,
+                            spacing: 0,
+                            width: 1,
+                            xValueMapper: (SparkData data, _) =>
+                                '${data.time.hour.toString().padLeft(2, '0')}:${data.time.minute.toString().padLeft(2, '0')}',
+                            yValueMapper: (SparkData data, _) => 1,
+                            pointColorMapper: (SparkData data, _) =>
+                                data.on ? Colors.blue[800] : Colors.red[800],
+                          ),
+                        ],
+                      )
+                    : Center(child: const CircularProgressIndicator()),
               ),
             ),
             Expanded(

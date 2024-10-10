@@ -49,9 +49,10 @@ class SmokePage extends GetView<SmokeController> {
                           tooltipDisplayMode:
                               TrackballDisplayMode.groupAllPoints,
                           tooltipSettings: InteractiveTooltip(
-                              borderColor: Colors.amber,
-                              borderWidth: 4,
-                              format: 'Status: point.y'),
+                            borderColor: Colors.amber,
+                            borderWidth: 4,
+                            format: 'Status: point.y',
+                          ),
                         ),
                         series: <ColumnSeries<SmokeData, String>>[
                           ColumnSeries<SmokeData, String>(
