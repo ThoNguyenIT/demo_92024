@@ -9,7 +9,7 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
 
   @override
   Widget build(BuildContext context) {
-    final HomeController controller2 = Get.find<HomeController>();
+    final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -27,7 +27,7 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
           Expanded(
             flex: 4,
             child: Container(
-              color: Colors.teal,
+              color: Colors.cyan,
               width: double.infinity,
               child: Center(
                 child: Text(
@@ -47,219 +47,232 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
                 color: Colors.white,
                 child: Column(
                   children: <Widget>[
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.warning, color: Colors.yellow, size: 30),
-                        SizedBox(width: 10),
-                        Text(
-                          "상황발생",
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 5,
+                        vertical: 10,
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.blue,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    right: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/room1.png',
+                                        width: 10,
+                                        height: 10,
+                                      ),
+                                      const Text(
+                                        "  성남호",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    right: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/room2.png',
+                                        width: 10,
+                                        height: 10,
+                                      ),
+                                      const Text(
+                                        "  판교호",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    right: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/room3.png',
+                                        width: 10,
+                                        height: 10,
+                                      ),
+                                      const Text(
+                                        "  분당호",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "발생 시간:",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                          Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.warning,
+                                      color: Colors.yellow, size: 45),
+                                  SizedBox(width: 5),
+                                  Text(
+                                    "상황발생",
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Icon(Icons.warning,
+                                      color: Colors.yellow, size: 45),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "발생 시간: 2023/08/10 10:45:30",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                        ),
-                        Text(
-                          "2023/08/10 10:45:30",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                          Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.blue,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    right: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/room1.png',
+                                        width: 10,
+                                        height: 10,
+                                      ),
+                                      const Text(
+                                        "  방1",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    right: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/room2.png',
+                                        width: 10,
+                                        height: 10,
+                                      ),
+                                      const Text(
+                                        "  방2",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    right: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/room3.png',
+                                        width: 10,
+                                        height: 10,
+                                      ),
+                                      const Text(
+                                        "  방3",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.blue,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/room1.png',
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "  성남호",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/room2.png',
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "  판교호",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/room3.png',
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "  분당호",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.blue,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/room1.png',
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "  방1",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/room2.png',
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "  방2",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/room3.png',
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      "  방3",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     Center(
-                      child: Obx(
-                        () => Image.asset(
-                          controller2.currentData.value.imagePath,
-                          fit: BoxFit.contain,
+                      child: InkWell(
+                        onTap: () {
+                          controller.toggleActive();
+                        },
+                        child: Obx(
+                          () => Image.asset(
+                            controller.currentData.value.imagePath,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
@@ -298,6 +311,7 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
                                 imagePaths[index],
                                 width: 80,
                                 height: 80,
+                                fit: BoxFit.contain,
                               ),
                             ],
                           );
