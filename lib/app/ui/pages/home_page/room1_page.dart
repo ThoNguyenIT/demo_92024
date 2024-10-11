@@ -27,7 +27,7 @@ class _Room1PageState extends State<Room1Page> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -306,8 +306,8 @@ class PopupDialog {
       builder: (BuildContext context) {
         return AlertDialog(
           content: SizedBox(
-            width: MediaQuery.of(context).size.width * 2,
-            height: MediaQuery.of(context).size.height * 2,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 2,
             child: Column(
               children: <Widget>[
                 const Row(
@@ -327,13 +327,17 @@ class PopupDialog {
                   children: [
                     Text(
                       "발생 시간:",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       "2023/08/10 10:45:30",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -342,7 +346,7 @@ class PopupDialog {
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 8,
+                        left: 6,
                         child: Image.asset(
                           'assets/images/chart.png',
                           height: 200,
@@ -518,7 +522,7 @@ class PopupDialog {
                     ],
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 50,
                   child: ListView.builder(
@@ -537,19 +541,23 @@ class PopupDialog {
                     },
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 10),
                 const Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "소화 화면으로",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       "이동하시겠습니까 ?",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),

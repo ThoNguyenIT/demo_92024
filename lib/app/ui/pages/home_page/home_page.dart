@@ -54,6 +54,7 @@ class HomePage extends GetView<HomeController> {
         body: Column(
           children: [
             Stack(
+              alignment: Alignment.bottomCenter,
               children: [
                 ImageSlideshow(
                   width: double.infinity,
@@ -61,175 +62,68 @@ class HomePage extends GetView<HomeController> {
                   initialPage: 0,
                   indicatorColor: Colors.blue,
                   indicatorBackgroundColor: Colors.grey,
-                  autoPlayInterval: 9000,
+                  indicatorBottomPadding: 65,
+                  autoPlayInterval: 10800000,
                   isLoop: true,
                   children: [
-                    Image.asset('assets/images/home.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/home1.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/home2.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/home.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/home1.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/home2.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/imageSlideshow/home.png',
+                        fit: BoxFit.cover),
+                    Image.asset('assets/images/imageSlideshow/home1.png',
+                        fit: BoxFit.cover),
+                    Image.asset('assets/images/imageSlideshow/home2.png',
+                        fit: BoxFit.cover),
+                    Image.asset('assets/images/imageSlideshow/home.png',
+                        fit: BoxFit.cover),
+                    Image.asset('assets/images/imageSlideshow/home1.png',
+                        fit: BoxFit.cover),
+                    Image.asset('assets/images/imageSlideshow/home2.png',
+                        fit: BoxFit.cover),
                   ],
                 ),
-                Positioned(
-                  top: 120,
-                  left: 25,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 35,
-                                height: 35,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image:
-                                        AssetImage("assets/images/room1.png"),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              const Text(
-                                "판교호",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                Container(
+                  color: Colors.transparent,
+                  child: const TabBar(
+                    labelColor: Colors.black,
+                    unselectedLabelColor: Colors.white,
+                    indicator: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
+                    ),
+                    tabs: [
+                      Tab(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 25),
+                          child: Text(
+                            "ROOM 1",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Container(
-                                width: 35,
-                                height: 35,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/room2.png'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              const Text(
-                                "성남호",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                        ),
+                      ),
+                      Tab(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 25),
+                          child: Text(
+                            "ROOM 2",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Container(
-                                width: 35,
-                                height: 35,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/room3.png'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              const Text(
-                                "분당호",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                        ),
+                      ),
+                      Tab(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 25),
+                          child: Text(
+                            "ROOM 3",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const Positioned(
-                  top: 130,
-                  left: 320,
-                  child: Text(
-                    '감수된玄: 5%\n습도: 68%\n용짝 : 3m/s',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 270,
-                  left: 333,
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: InkWell(
-                      onTap: () {
-                        print("Image button pressed");
-                      },
-                      child: Image.asset(
-                        'assets/images/ship_add.png',
-                        width: 70,
-                        height: 70,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
               ],
-            ),
-            Container(
-              color: Colors.blue,
-              child: const TabBar(
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.white,
-                indicator: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-                isScrollable: false,
-                tabs: [
-                  Tab(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "ROOM 1",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "ROOM 2",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "ROOM 3",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
             const Expanded(
               child: TabBarView(

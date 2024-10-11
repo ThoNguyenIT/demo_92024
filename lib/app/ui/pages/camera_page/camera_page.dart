@@ -51,41 +51,19 @@ class CameraPage extends GetView<CameraController> {
             ),
           ),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      width: 3,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  child: const Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "2023.08.07",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                for (var i = 0; i < 20; i++)
+            child: Scrollbar(
+              interactive: false,
+              radius: Radius.circular(90),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                children: [
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
-                        width: 1,
-                        color: Colors.grey,
+                        width: 3,
+                        color: Colors.blue,
                       ),
                     ),
                     child: const Row(
@@ -93,7 +71,7 @@ class CameraPage extends GetView<CameraController> {
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            "2023.08.06",
+                            "2023.08.07",
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
@@ -104,7 +82,33 @@ class CameraPage extends GetView<CameraController> {
                       ],
                     ),
                   ),
-              ],
+                  for (var i = 0; i < 20; i++)
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 1,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      child: const Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              "2023.08.06",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
         ],

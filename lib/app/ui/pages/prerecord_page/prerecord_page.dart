@@ -34,79 +34,83 @@ class PrerecordPage extends GetView<PrerecordController> {
             ),
           ),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      width: 3,
-                      color: Colors.grey,
+            child: Scrollbar(
+              interactive: false,
+              radius: Radius.circular(90),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        width: 3,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "2023.08.07",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(
+                              Icons.arrow_right_sharp,
+                              size: 30,
+                              color: Colors.black,
+                            ),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "2023.08.07",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "2023.08.06",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.arrow_right_sharp,
-                            size: 30,
-                            color: Colors.black,
+                          IconButton(
+                            icon: const Icon(
+                              Icons.arrow_right_sharp,
+                              size: 30,
+                              color: Colors.black,
+                            ),
+                            onPressed: () {
+                              Get.to(() => const RecordPage());
+                            },
                           ),
-                          onPressed: () {},
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      width: 1,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "2023.08.06",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.arrow_right_sharp,
-                            size: 30,
-                            color: Colors.black,
-                          ),
-                          onPressed: () {
-                            Get.to(() => const RecordPage());
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
