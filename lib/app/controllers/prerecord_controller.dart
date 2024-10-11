@@ -24,4 +24,10 @@ class PrerecordController extends GetxController {
       ),
     );
   }
+
+  @override
+  void onClose() {
+    youtubeController.dispose();
+    super.onClose();
+  }
 }
