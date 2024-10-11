@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class RealtimeviewController extends GetxController {
+class RealtimeController extends GetxController {
   late YoutubePlayerController youtubeController;
   var operatedExtinguisher = false.obs;
 
@@ -30,6 +30,7 @@ class RealtimeviewController extends GetxController {
       ),
     );
   }
+
   @override
   void onClose() {
     youtubeController.dispose();

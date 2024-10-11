@@ -4,7 +4,7 @@ import 'package:demo_92024/app/bindings/home_binding.dart';
 import 'package:demo_92024/app/bindings/login_binding.dart';
 import 'package:demo_92024/app/bindings/optionmenu_binding.dart';
 import 'package:demo_92024/app/bindings/prerecord_binding.dart';
-import 'package:demo_92024/app/bindings/realtimeview_binding.dart';
+import 'package:demo_92024/app/bindings/realtime_binding.dart';
 import 'package:demo_92024/app/bindings/smoke_binding.dart';
 import 'package:demo_92024/app/bindings/spark_binding.dart';
 import 'package:demo_92024/app/routes/app_routes.dart';
@@ -14,7 +14,7 @@ import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:demo_92024/app/ui/pages/login_page/login_page.dart';
 import 'package:demo_92024/app/ui/pages/optionmenu_page/optionmenu_page.dart';
 import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
-import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
+import 'package:demo_92024/app/ui/pages/realtimeview_page/realtime_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
 import 'package:demo_92024/app/ui/pages/spark_page/spark_page.dart';
@@ -38,12 +38,12 @@ class AppPages {
       binding: OptionmenuBinding(),
     ),
     GetPage(
-      name: AppRoutes.realtimeview,
-      page: () => const RealtimeviewPage(),
-      binding: RealtimeviewBinding(),
+      name: AppRoutes.realtime,
+      page: () => const RealtimePage(),
+      binding: RealtimeBinding(),
     ),
     GetPage(
-      name: AppRoutes.cameraview,
+      name: AppRoutes.camera,
       page: () => const CameraPage(),
       binding: CameraBinding(),
     ),

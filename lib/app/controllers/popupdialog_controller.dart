@@ -1,7 +1,3 @@
-
 import 'package:get/get.dart';
 
-class PopupdialogController extends GetxController {
-
-}
-  
+class PopupdialogController extends GetxController {}

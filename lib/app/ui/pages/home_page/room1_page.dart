@@ -3,7 +3,7 @@ import 'package:demo_92024/app/ui/global_widgets/global_badge.dart';
 import 'package:demo_92024/app/ui/pages/camera_page/camera_page.dart';
 import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
-import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
+import 'package:demo_92024/app/ui/pages/realtimeview_page/realtime_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
 import 'package:demo_92024/app/ui/pages/spark_page/spark_page.dart';
 import 'package:flutter/material.dart';
@@ -569,7 +569,7 @@ class PopupDialog {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const RealtimeviewPage(),
+                            builder: (context) => const RealtimePage(),
                           ),
                         );
                       },

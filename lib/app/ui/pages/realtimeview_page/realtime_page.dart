@@ -1,11 +1,11 @@
 import 'package:demo_92024/app/controllers/home_controller.dart';
-import 'package:demo_92024/app/controllers/realtimeview_controller.dart';
+import 'package:demo_92024/app/controllers/realtime_controller.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class RealtimeviewPage extends GetView<RealtimeviewController> {
-  const RealtimeviewPage({super.key});
+class RealtimePage extends GetView<RealtimeController> {
+  const RealtimePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
-            Get.offAll(() => const HomePage());
+            Get.off(() => const HomePage());
           },
         ),
       ),
@@ -146,8 +146,11 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.warning,
-                                      color: Colors.yellow, size: 45),
+                                  Icon(
+                                    Icons.warning,
+                                    color: Colors.yellow,
+                                    size: 45,
+                                  ),
                                   SizedBox(width: 5),
                                   Text(
                                     "상황발생",
@@ -157,8 +160,11 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
                                     ),
                                   ),
                                   SizedBox(width: 5),
-                                  Icon(Icons.warning,
-                                      color: Colors.yellow, size: 45),
+                                  Icon(
+                                    Icons.warning,
+                                    color: Colors.yellow,
+                                    size: 45,
+                                  ),
                                 ],
                               ),
                               Row(
@@ -278,7 +284,7 @@ class RealtimeviewPage extends GetView<RealtimeviewController> {
                     ),
                     ElevatedButton.icon(
                       onPressed: () {
-                        /* PopupDialog.showPopup(context); */
+                        PopupDialog.showPopup(context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 255, 17, 0),
@@ -337,11 +343,9 @@ List<String> imagePaths = [
   'assets/images/5.png',
 ];
 
-/*
 class PopupDialog {
   static void showPopup(BuildContext context) {
-    final RealtimeviewController controller =
-        Get.find<RealtimeviewController>();
+    final RealtimeController controller = Get.put(RealtimeController());
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -357,7 +361,7 @@ class PopupDialog {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Image.asset(
-                      'assets/images/home1.png',
+                      'assets/images/imageSlideshow/home.png',
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -427,4 +431,3 @@ class PopupDialog {
     );
   }
 }
-*/
