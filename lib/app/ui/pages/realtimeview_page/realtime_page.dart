@@ -1,6 +1,6 @@
 import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:demo_92024/app/controllers/realtime_controller.dart';
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,7 @@ class RealtimePage extends GetView<RealtimeController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
-            Get.off(() => const HomePage());
+             Get.offAllNamed(AppRoutes.home);
           },
         ),
       ),

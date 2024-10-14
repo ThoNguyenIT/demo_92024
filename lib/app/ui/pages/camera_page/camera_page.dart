@@ -1,4 +1,4 @@
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/camera_controller.dart';
@@ -17,14 +17,27 @@ class CameraPage extends GetView<CameraController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Get.offAll(() => const HomePage());
+            Get.offAllNamed(AppRoutes.home);
           },
         ),
       ),
       body: Column(
         children: [
+          Expanded(
+            child: Container(
+              color: Colors.blueAccent,
+              child: Center(
+                child: Text(
+                  'Your Video is here',
+                  style: TextStyle(
+                    fontSize: 40,
+                  ),
+                ),
+              ),
+            ),
+          ),
           SizedBox(
-            height: 50,
+            height: 60,
             width: double.infinity,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -34,6 +47,9 @@ class CameraPage extends GetView<CameraController> {
                   children: [
                     Image.asset(
                       imagePaths[index],
+                      height: 60,
+                      width: 60,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 );

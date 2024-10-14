@@ -1,5 +1,4 @@
-import 'package:demo_92024/app/bindings/home_binding.dart';
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
@@ -16,8 +15,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialBinding: HomeBinding(),
-      home: const HomePage(),
+      /*
+      check this one --> https://github.com/hasancse91/flutter_getx_template/tree/master
+      initialBinding: InitialBinding(), : initialBinding: LoginPage(),
+      */
+      initialRoute: AppRoutes.login,
       getPages: AppPages.pages,
     );
   }

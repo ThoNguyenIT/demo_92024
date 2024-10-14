@@ -1,4 +1,4 @@
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +17,7 @@ class RecordPage extends GetView<RecordController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
-            Get.offAll(() => const HomePage());
+            Get.offAllNamed(AppRoutes.home);
           },
         ),
       ),
