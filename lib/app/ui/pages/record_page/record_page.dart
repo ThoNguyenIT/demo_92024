@@ -2,7 +2,6 @@ import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:demo_92024/app/ui/pages/prerecord_page/prerecord_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../controllers/record_controller.dart';
 
 class RecordPage extends GetView<RecordController> {
@@ -10,7 +9,6 @@ class RecordPage extends GetView<RecordController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(RecordController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -25,14 +23,6 @@ class RecordPage extends GetView<RecordController> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 400,
-            width: double.infinity,
-            child: YoutubePlayer(
-              controller: controller.youtubeController,
-              showVideoProgressIndicator: true,
-            ),
-          ),
           Expanded(
             child: Scrollbar(
               interactive: false,

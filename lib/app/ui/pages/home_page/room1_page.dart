@@ -45,16 +45,12 @@ class _Room1PageState extends State<Room1Page> {
                           inactiveTrackColor: Colors.white,
                         ),
                       ),
-                      Obx(
-                        () => Text(
-                          controller.isAutoMode.value ? 'Auto' : 'Manual',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: controller.isAutoMode.value
-                                ? Colors.blue
-                                : Colors.grey,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Text(
+                        '수동 모드',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -140,26 +136,27 @@ class _Room1PageState extends State<Room1Page> {
                   Switch(
                     value: isExpanded,
                     onChanged: (bool value) {
-                      setState(() {
-                        isExpanded = value;
-                      });
+                      setState(
+                        () {
+                          isExpanded = value;
+                        },
+                      );
                     },
                     activeColor: Colors.blue,
                     inactiveThumbColor: Colors.grey,
                     inactiveTrackColor: Colors.white,
                   ),
                   Text(
-                    isExpanded ? 'Mở rộng' : 'Thu gọn',
+                    '센서 보기',
                     style: TextStyle(
-                      fontSize: 18,
-                      color: isExpanded ? Colors.blue : Colors.grey,
+                      fontSize: 20,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
             AnimatedContainer(
               duration: Duration(milliseconds: 5000),
               curve: Curves.fastLinearToSlowEaseIn,
@@ -274,7 +271,6 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
             TextButton(
               onPressed: () {
                 PopupDialog.showPopup(context);
@@ -287,13 +283,15 @@ class _Room1PageState extends State<Room1Page> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            /* ...List.generate(
+            /*
+            ...List.generate(
               5,
               (index) => ElevatedButton(
                 onPressed: () => controller.setLevel(index + 1),
                 child: Text('Set Level ${index + 1}'),
               ),
-            ), */
+            ),
+            */
           ],
         ),
       ),

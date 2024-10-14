@@ -2,7 +2,6 @@ import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../controllers/prerecord_controller.dart';
 
 class PrerecordPage extends GetView<PrerecordController> {
@@ -10,7 +9,6 @@ class PrerecordPage extends GetView<PrerecordController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(PrerecordController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -25,14 +23,6 @@ class PrerecordPage extends GetView<PrerecordController> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 400,
-            width: double.infinity,
-            child: YoutubePlayer(
-              controller: controller.youtubeController,
-              showVideoProgressIndicator: true,
-            ),
-          ),
           Expanded(
             child: Scrollbar(
               interactive: false,
