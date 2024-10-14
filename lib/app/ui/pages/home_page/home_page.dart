@@ -1,8 +1,9 @@
+import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:demo_92024/app/ui/pages/home_page/room1_page.dart';
-import 'package:demo_92024/app/ui/pages/optionmenu_page/optionmenu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../../controllers/home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -18,8 +19,8 @@ class HomePage extends GetView<HomeController> {
         leading: Builder(
           builder: (context) {
             return IconButton(
-              icon: const Icon(
-                Icons.menu_outlined,
+              icon: HugeIcon(
+                icon: HugeIcons.strokeRoundedMenu04,
                 color: Colors.white,
               ),
               onPressed: () {
@@ -30,31 +31,41 @@ class HomePage extends GetView<HomeController> {
         ),
       ),
       drawer: Drawer(
+        backgroundColor: Colors.white,
         child: ListView(
           children: <Widget>[
-            Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: TextButton(
-                  onPressed: () {
-                    Get.to(() => const OptionmenuPage());
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '설정',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 227, 227, 227),
+                  border: Border(
+                    left: BorderSide(
+                      color: Colors.blue,
+                      width: 5,
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: TextButton(
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.optionmenu);
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '설정',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Icon(Icons.settings_applications_rounded),
-                    ],
+                        Icon(Icons.settings_applications_sharp),
+                      ],
+                    ),
                   ),
                 ),
               ),

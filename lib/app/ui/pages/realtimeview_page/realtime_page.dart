@@ -18,7 +18,7 @@ class RealtimePage extends GetView<RealtimeController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
-             Get.offAllNamed(AppRoutes.home);
+            Get.offAllNamed(AppRoutes.home);
           },
         ),
       ),
@@ -31,9 +31,9 @@ class RealtimePage extends GetView<RealtimeController> {
               width: double.infinity,
               child: Center(
                 child: Text(
-                  'Your video',
+                  'Your Video is here',
                   style: TextStyle(
-                    fontSize: 50,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

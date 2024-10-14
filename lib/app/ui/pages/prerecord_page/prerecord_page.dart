@@ -1,5 +1,4 @@
 import 'package:demo_92024/app/routes/app_routes.dart';
-import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/prerecord_controller.dart';
@@ -24,6 +23,22 @@ class PrerecordPage extends GetView<PrerecordController> {
       body: Column(
         children: [
           Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.brown,
+              child: Center(
+                child: Text(
+                  'Your Video is here',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 2,
             child: Scrollbar(
               interactive: false,
               radius: Radius.circular(90),
@@ -91,9 +106,7 @@ class PrerecordPage extends GetView<PrerecordController> {
                               size: 30,
                               color: Colors.black,
                             ),
-                            onPressed: () {
-                              Get.to(() => const RecordPage());
-                            },
+                            onPressed: () {},
                           ),
                         ],
                       ),

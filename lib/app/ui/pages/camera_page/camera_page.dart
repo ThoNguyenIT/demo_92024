@@ -31,6 +31,7 @@ class CameraPage extends GetView<CameraController> {
                   'Your Video is here',
                   style: TextStyle(
                     fontSize: 40,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

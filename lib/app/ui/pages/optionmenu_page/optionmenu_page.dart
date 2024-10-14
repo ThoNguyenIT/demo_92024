@@ -21,7 +21,10 @@ class OptionmenuPage extends GetView<OptionmenuController> {
         ),
         title: Text(
           '설정',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
         ),
       ),
       body: SafeArea(
@@ -69,7 +72,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                         },
                         activeColor: Colors.blue,
                         inactiveThumbColor: Colors.grey,
-                        inactiveTrackColor: Colors.grey[300],
+                        inactiveTrackColor: Colors.white,
                       ),
                     ),
                   ],
@@ -257,8 +260,12 @@ class OptionmenuPage extends GetView<OptionmenuController> {
               ),
             ),
             Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
+                border: Border.all(
+                  width: 1,
+                  color: Colors.grey,
+                ),
               ),
               child: TextButton(
                 onPressed: () {
