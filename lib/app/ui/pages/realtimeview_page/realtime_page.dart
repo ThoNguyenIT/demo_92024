@@ -1,53 +1,15 @@
 import 'package:demo_92024/app/controllers/home_controller.dart';
+import 'package:demo_92024/app/controllers/realtime_controller.dart';
 import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class RealtimeviewController extends GetxController {
-  late YoutubePlayerController youtubeController;
-  var operatedExtinguisher = false.obs;
-
-  void extinguisherBtn() {
-    operatedExtinguisher.value = true;
-  }
-
-  @override
-  void onInit() {
-    super.onInit();
-    const videoUrl = "https://www.youtube.com/watch?v=jfKfPfyJRdk";
-    final videoId = YoutubePlayer.convertUrlToId(videoUrl);
-    youtubeController = YoutubePlayerController(
-      initialVideoId: videoId!,
-      flags: const YoutubePlayerFlags(
-        autoPlay: true,
-        mute: true,
-        disableDragSeek: false,
-        loop: false,
-        isLive: true,
-        forceHD: true,
-        enableCaption: false,
-        controlsVisibleAtStart: false,
-        hideControls: false,
-        showLiveFullscreenButton: true,
-      ),
-    );
-  }
-
-  @override
-  void onClose() {
-    youtubeController.dispose();
-    super.onClose();
-  }
-}
-
-class RealtimeviewPage extends StatelessWidget {
-  const RealtimeviewPage({super.key});
+class RealtimePage extends GetView<RealtimeController> {
+  const RealtimePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final RealtimeviewController controller = Get.put(RealtimeviewController());
-    final HomeController controller2 = Get.find<HomeController>();
+    final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -56,7 +18,7 @@ class RealtimeviewPage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
-            Get.offAll(() => const HomePage());
+            Get.off(() => const HomePage());
           },
         ),
       ),
@@ -64,50 +26,34 @@ class RealtimeviewPage extends StatelessWidget {
         children: [
           Expanded(
             flex: 4,
-            child: YoutubePlayer(
-              controller: controller.youtubeController,
-              showVideoProgressIndicator: true,
+            child: Container(
+              color: Colors.cyan,
+              width: double.infinity,
+              child: Center(
+                child: Text(
+                  'Your video',
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
           ),
           Expanded(
             flex: 6,
             child: SingleChildScrollView(
               child: Container(
-                  color: Colors.blueGrey[50],
-                  child: Column(
-                    children: <Widget>[
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.warning, color: Colors.yellow, size: 30),
-                          SizedBox(width: 10),
-                          Text(
-                            "상황발생",
-                            style: TextStyle(
-                                fontSize: 40, fontWeight: FontWeight.bold),
-                          ),
-                        ],
+                color: Colors.white,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 5,
+                        vertical: 10,
                       ),
-                      const Column(
+                      child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "발생 시간:",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "2023/08/10 10:45:30",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
@@ -192,6 +138,46 @@ class RealtimeviewPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.warning,
+                                    color: Colors.yellow,
+                                    size: 45,
+                                  ),
+                                  SizedBox(width: 5),
+                                  Text(
+                                    "상황발생",
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Icon(
+                                    Icons.warning,
+                                    color: Colors.yellow,
+                                    size: 45,
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "발생 시간: 2023/08/10 10:45:30",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -282,56 +268,65 @@ class RealtimeviewPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Center(
+                    ),
+                    Center(
+                      child: InkWell(
+                        onTap: () {
+                          controller.toggleActive();
+                        },
                         child: Obx(
                           () => Image.asset(
-                            controller2.currentData.value.imagePath,
+                            controller.currentData.value.imagePath,
                             fit: BoxFit.contain,
                           ),
                         ),
                       ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          PopupDialog.showPopup(context);
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        PopupDialog.showPopup(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 255, 17, 0),
+                      ),
+                      label: Text(
+                        '소 화',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      icon: Image.asset(
+                        'assets/icons/extinguisher.png',
+                        width: 20,
+                        height: 20,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 100,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: imagePaths.length,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Row(
+                            children: [
+                              Image.asset(
+                                imagePaths[index],
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.contain,
+                              ),
+                            ],
+                          );
                         },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromARGB(255, 255, 17, 0),
-                        ),
-                        label: Text(
-                          '소 화',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                        icon: Image.asset(
-                          'assets/icons/extinguisher.png',
-                          width: 20,
-                          height: 20,
-                        ),
                       ),
-                      SizedBox(
-                        height: 100,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: imagePaths.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Row(
-                              children: [
-                                Image.asset(
-                                  imagePaths[index],
-                                  width: 80,
-                                  height: 80,
-                                ),
-                              ],
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
@@ -340,10 +335,17 @@ class RealtimeviewPage extends StatelessWidget {
   }
 }
 
+List<String> imagePaths = [
+  'assets/images/1.png',
+  'assets/images/2.png',
+  'assets/images/3.png',
+  'assets/images/4.png',
+  'assets/images/5.png',
+];
+
 class PopupDialog {
   static void showPopup(BuildContext context) {
-    final RealtimeviewController controller =
-        Get.find<RealtimeviewController>();
+    final RealtimeController controller = Get.put(RealtimeController());
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -359,7 +361,7 @@ class PopupDialog {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Image.asset(
-                      'assets/images/home1.png',
+                      'assets/images/imageSlideshow/home.png',
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -429,11 +431,3 @@ class PopupDialog {
     );
   }
 }
-
-List<String> imagePaths = [
-  'assets/images/1.png',
-  'assets/images/2.png',
-  'assets/images/3.png',
-  'assets/images/4.png',
-  'assets/images/5.png',
-];

@@ -116,8 +116,8 @@ class LoginPage extends GetView<LoginController> {
                   ElevatedButton(
                     onPressed: () {
                       controller.validateFields();
-                      if (!controller.id.value.isEmpty &&
-                          !controller.pw.value.isEmpty) {
+                      if (controller.id.value.isNotEmpty &&
+                          controller.pw.value.isNotEmpty) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(

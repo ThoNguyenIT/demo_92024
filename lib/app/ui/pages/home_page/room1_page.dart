@@ -3,7 +3,7 @@ import 'package:demo_92024/app/ui/global_widgets/global_badge.dart';
 import 'package:demo_92024/app/ui/pages/camera_page/camera_page.dart';
 import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
-import 'package:demo_92024/app/ui/pages/realtimeview_page/realtimeview_page.dart';
+import 'package:demo_92024/app/ui/pages/realtimeview_page/realtime_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
 import 'package:demo_92024/app/ui/pages/spark_page/spark_page.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class _Room1PageState extends State<Room1Page> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,19 +42,15 @@ class _Room1PageState extends State<Room1Page> {
                           },
                           activeColor: Colors.blue,
                           inactiveThumbColor: Colors.grey,
-                          inactiveTrackColor: Colors.grey[300],
+                          inactiveTrackColor: Colors.white,
                         ),
                       ),
-                      Obx(
-                        () => Text(
-                          controller.isAutoMode.value ? 'Auto' : 'Manual',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: controller.isAutoMode.value
-                                ? Colors.blue
-                                : Colors.grey,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Text(
+                        '수동 모드',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -133,31 +129,34 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    isExpanded = !isExpanded;
-                  },
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0),
-                ),
-              ),
-              child: Text(
-                '접기',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Switch(
+                    value: isExpanded,
+                    onChanged: (bool value) {
+                      setState(
+                        () {
+                          isExpanded = value;
+                        },
+                      );
+                    },
+                    activeColor: Colors.blue,
+                    inactiveThumbColor: Colors.grey,
+                    inactiveTrackColor: Colors.white,
+                  ),
+                  Text(
+                    '센서 보기',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 10),
             AnimatedContainer(
               duration: Duration(milliseconds: 5000),
               curve: Curves.fastLinearToSlowEaseIn,
@@ -272,7 +271,6 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
             TextButton(
               onPressed: () {
                 PopupDialog.showPopup(context);
@@ -285,13 +283,15 @@ class _Room1PageState extends State<Room1Page> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            /* ...List.generate(
+            /*
+            ...List.generate(
               5,
               (index) => ElevatedButton(
                 onPressed: () => controller.setLevel(index + 1),
                 child: Text('Set Level ${index + 1}'),
               ),
-            ), */
+            ),
+            */
           ],
         ),
       ),
@@ -306,8 +306,8 @@ class PopupDialog {
       builder: (BuildContext context) {
         return AlertDialog(
           content: SizedBox(
-            width: MediaQuery.of(context).size.width * 2,
-            height: MediaQuery.of(context).size.height * 2,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 2,
             child: Column(
               children: <Widget>[
                 const Row(
@@ -327,13 +327,17 @@ class PopupDialog {
                   children: [
                     Text(
                       "발생 시간:",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       "2023/08/10 10:45:30",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -342,7 +346,7 @@ class PopupDialog {
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 8,
+                        left: 6,
                         child: Image.asset(
                           'assets/images/chart.png',
                           height: 200,
@@ -518,7 +522,7 @@ class PopupDialog {
                     ],
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 50,
                   child: ListView.builder(
@@ -537,19 +541,23 @@ class PopupDialog {
                     },
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 10),
                 const Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "소화 화면으로",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       "이동하시겠습니까 ?",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -561,7 +569,7 @@ class PopupDialog {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const RealtimeviewPage(),
+                            builder: (context) => const RealtimePage(),
                           ),
                         );
                       },
