@@ -42,7 +42,7 @@ class _Room1PageState extends State<Room1Page> {
                           },
                           activeColor: Colors.blue,
                           inactiveThumbColor: Colors.grey,
-                          inactiveTrackColor: Colors.grey[300],
+                          inactiveTrackColor: Colors.white,
                         ),
                       ),
                       Obx(
@@ -133,28 +133,30 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    isExpanded = !isExpanded;
-                  },
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0),
-                ),
-              ),
-              child: Text(
-                '접기',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Switch(
+                    value: isExpanded,
+                    onChanged: (bool value) {
+                      setState(() {
+                        isExpanded = value;
+                      });
+                    },
+                    activeColor: Colors.blue,
+                    inactiveThumbColor: Colors.grey,
+                    inactiveTrackColor: Colors.white,
+                  ),
+                  Text(
+                    isExpanded ? 'Mở rộng' : 'Thu gọn',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: isExpanded ? Colors.blue : Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
               ),
             ),
             SizedBox(height: 10),

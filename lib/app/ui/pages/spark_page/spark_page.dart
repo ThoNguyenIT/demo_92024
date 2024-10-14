@@ -1,5 +1,5 @@
 import 'package:demo_92024/app/data/models/raw_data.dart';
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:demo_92024/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -19,7 +19,7 @@ class SparkPage extends GetView<SparkController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Get.offAll(() => const HomePage());
+            Get.offAllNamed(AppRoutes.home);
           },
         ),
       ),
