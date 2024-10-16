@@ -348,13 +348,14 @@ class DialogExtinguisher {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: Colors.white,
+          /* contentPadding: EdgeInsets.zero, */
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(15),
             ),
             side: BorderSide(color: Colors.grey, width: 2.5),
           ),
-          /* contentPadding: EdgeInsets.zero, */
           content: Wrap(
             children: [
               Column(

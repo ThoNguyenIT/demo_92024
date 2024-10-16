@@ -120,27 +120,42 @@ class HomePage extends GetView<HomeController> {
                       Tab(
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 25),
-                          child: Text(
-                            "ROOM 1",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          child: MediaQuery(
+                            data: MediaQuery.of(context)
+                                .copyWith(textScaler: TextScaler.linear(0.8)),
+                            child: Text(
+                              "ROOM 1",
+                              maxLines: 1,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
                       Tab(
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 25),
-                          child: Text(
-                            "ROOM 2",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          child: MediaQuery(
+                            data: MediaQuery.of(context)
+                                .copyWith(textScaler: TextScaler.linear(0.8)),
+                            child: Text(
+                              "ROOM 2",
+                              maxLines: 1,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
                       Tab(
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 25),
-                          child: Text(
-                            "ROOM 3",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          child: MediaQuery(
+                            data: MediaQuery.of(context)
+                                .copyWith(textScaler: TextScaler.linear(0.8)),
+                            child: Text(
+                              "ROOM 3",
+                              maxLines: 1,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
