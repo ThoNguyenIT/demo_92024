@@ -15,7 +15,7 @@ class CameraPage extends GetView<CameraController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Get.offAllNamed(AppRoutes.home);
           },
@@ -73,7 +73,7 @@ class CameraPage extends GetView<CameraController> {
                         color: Colors.blue,
                       ),
                     ),
-                    child: const Row(
+                    child: Row(
                       children: [
                         Padding(
                           padding: EdgeInsets.all(8.0),
@@ -98,7 +98,7 @@ class CameraPage extends GetView<CameraController> {
                           color: Colors.grey,
                         ),
                       ),
-                      child: const Row(
+                      child: Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.all(8.0),

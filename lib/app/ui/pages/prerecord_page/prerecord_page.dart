@@ -14,7 +14,7 @@ class PrerecordPage extends GetView<PrerecordController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
             Get.offAllNamed(AppRoutes.home);
           },
@@ -55,11 +55,11 @@ class PrerecordPage extends GetView<PrerecordController> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
+                          Text(
                             "2023.08.07",
                             style: TextStyle(
                               color: Colors.black,
@@ -68,7 +68,7 @@ class PrerecordPage extends GetView<PrerecordController> {
                             ),
                           ),
                           IconButton(
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.arrow_right_sharp,
                               size: 30,
                               color: Colors.black,
@@ -88,11 +88,11 @@ class PrerecordPage extends GetView<PrerecordController> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
+                          Text(
                             "2023.08.06",
                             style: TextStyle(
                               color: Colors.black,
@@ -101,7 +101,7 @@ class PrerecordPage extends GetView<PrerecordController> {
                             ),
                           ),
                           IconButton(
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.arrow_right_sharp,
                               size: 30,
                               color: Colors.black,

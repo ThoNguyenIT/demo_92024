@@ -23,7 +23,7 @@ class GlobalBadge extends StatelessWidget {
         badgeColor: Colors.white,
         borderSide: BorderSide(
           width: 1,
-          color: const Color.fromARGB(255, 105, 105, 105),
+          color: Color.fromARGB(255, 105, 105, 105),
         ),
       ),
       badgeContent: Icon(

@@ -13,7 +13,7 @@ class LoginPage extends GetView<LoginController> {
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/background.png"),
                   fit: BoxFit.cover),
@@ -21,14 +21,14 @@ class LoginPage extends GetView<LoginController> {
           ),
           Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.only(left: 50, right: 50),
+              padding: EdgeInsets.only(left: 50, right: 50),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   TextFormField(
-                    style: const TextStyle(fontSize: 30, color: Colors.black),
-                    decoration: const InputDecoration(
+                    style: TextStyle(fontSize: 30, color: Colors.black),
+                    decoration: InputDecoration(
                       labelText: 'ID',
                       labelStyle: TextStyle(fontSize: 30, color: Colors.white),
                       enabledBorder: UnderlineInputBorder(
@@ -40,18 +40,18 @@ class LoginPage extends GetView<LoginController> {
                     ),
                     onChanged: (value) => controller.id.value = value,
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20),
                   Obx(
                     () => TextFormField(
-                      style: const TextStyle(fontSize: 30, color: Colors.black),
+                      style: TextStyle(fontSize: 30, color: Colors.black),
                       decoration: InputDecoration(
                         labelText: 'PW',
                         labelStyle:
-                            const TextStyle(fontSize: 30, color: Colors.white),
-                        enabledBorder: const UnderlineInputBorder(
+                            TextStyle(fontSize: 30, color: Colors.white),
+                        enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.blue, width: 2),
                         ),
-                        focusedBorder: const UnderlineInputBorder(
+                        focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.blue, width: 2),
                         ),
                         suffixIcon: IconButton(
@@ -70,7 +70,7 @@ class LoginPage extends GetView<LoginController> {
                       onChanged: (value) => controller.pw.value = value,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20),
                   Obx(
                     () => Row(
                       children: [
@@ -81,12 +81,12 @@ class LoginPage extends GetView<LoginController> {
                           },
                           activeColor: Colors.blue,
                           checkColor: Colors.white,
-                          side: const BorderSide(
+                          side: BorderSide(
                             color: Colors.blue,
                             width: 2,
                           ),
                         ),
-                        const Text(
+                        Text(
                           '자동 로그인',
                           style: TextStyle(
                             color: Colors.blue,
@@ -97,14 +97,14 @@ class LoginPage extends GetView<LoginController> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        shape: const StadiumBorder(),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: StadiumBorder(),
+                        padding: EdgeInsets.symmetric(vertical: 16),
                         backgroundColor: Colors.blue),
-                    child: const Text(
+                    child: Text(
                       "회원 가입",
                       style: TextStyle(
                           fontSize: 20,
@@ -112,7 +112,7 @@ class LoginPage extends GetView<LoginController> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {
                       controller.validateFields();
@@ -121,16 +121,16 @@ class LoginPage extends GetView<LoginController> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomePage(),
+                            builder: (context) => HomePage(),
                           ),
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                        shape: const StadiumBorder(),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: StadiumBorder(),
+                        padding: EdgeInsets.symmetric(vertical: 16),
                         backgroundColor: Colors.blue),
-                    child: const Text(
+                    child: Text(
                       "로그인",
                       style: TextStyle(
                           fontSize: 20,

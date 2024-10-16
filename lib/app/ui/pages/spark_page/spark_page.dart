@@ -17,7 +17,7 @@ class SparkPage extends GetView<SparkController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Get.offAllNamed(AppRoutes.home);
           },
@@ -67,7 +67,7 @@ class SparkPage extends GetView<SparkController> {
                           ),
                         ],
                       )
-                    : Center(child: const CircularProgressIndicator()),
+                    : Center(child: CircularProgressIndicator()),
               ),
             ),
             Expanded(
@@ -82,7 +82,7 @@ class SparkPage extends GetView<SparkController> {
                         color: Colors.blue,
                       ),
                     ),
-                    child: const Row(
+                    child: Row(
                       children: [
                         Padding(
                           padding: EdgeInsets.all(8.0),
@@ -106,7 +106,7 @@ class SparkPage extends GetView<SparkController> {
                           color: Colors.grey,
                         ),
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
                           "2024.10.09",

@@ -17,7 +17,7 @@ class SmokePage extends GetView<SmokeController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Get.offAllNamed(AppRoutes.home);
           },
@@ -67,7 +67,7 @@ class SmokePage extends GetView<SmokeController> {
                           ),
                         ],
                       )
-                    : Center(child: const CircularProgressIndicator()),
+                    : Center(child: CircularProgressIndicator()),
               ),
             ),
             Expanded(
@@ -85,7 +85,7 @@ class SmokePage extends GetView<SmokeController> {
                           color: Colors.blue,
                         ),
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
                           "2024.10.10",
@@ -105,7 +105,7 @@ class SmokePage extends GetView<SmokeController> {
                             color: Colors.grey,
                           ),
                         ),
-                        child: const Padding(
+                        child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             "2024.10.09",

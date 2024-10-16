@@ -24,52 +24,52 @@ class AppPages {
   static final List<GetPage> pages = [
     GetPage(
       name: AppRoutes.login,
-      page: () => const LoginPage(),
+      page: () => LoginPage(),
       binding: LoginBinding(),
     ),
     GetPage(
       name: AppRoutes.home,
-      page: () => const HomePage(),
+      page: () => HomePage(),
       binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.optionmenu,
-      page: () => const OptionmenuPage(),
+      page: () =>  OptionmenuPage(),
       binding: OptionmenuBinding(),
     ),
     GetPage(
       name: AppRoutes.realtime,
-      page: () => const RealtimePage(),
+      page: () => RealtimePage(),
       binding: RealtimeBinding(),
     ),
     GetPage(
       name: AppRoutes.camera,
-      page: () => const CameraPage(),
+      page: () =>  CameraPage(),
       binding: CameraBinding(),
     ),
     GetPage(
       name: AppRoutes.record,
-      page: () => const RecordPage(),
+      page: () =>  RecordPage(),
       binding: PrerecordBinding(),
     ),
     GetPage(
       name: AppRoutes.prerecord,
-      page: () => const PrerecordPage(),
+      page: () =>  PrerecordPage(),
       binding: PrerecordBinding(),
     ),
     GetPage(
       name: AppRoutes.spark,
-      page: () => const SparkPage(),
+      page: () =>  SparkPage(),
       binding: SparkBinding(),
     ),
     GetPage(
       name: AppRoutes.smoke,
-      page: () => const SmokePage(),
+      page: () =>  SmokePage(),
       binding: SmokeBinding(),
     ),
     GetPage(
       name: AppRoutes.degree,
-      page: () => const DegreePage(),
+      page: () =>  DegreePage(),
       binding: DegreeBinding(),
     ),
   ];

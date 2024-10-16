@@ -16,7 +16,7 @@ class RealtimePage extends GetView<RealtimeController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
             Get.offAllNamed(AppRoutes.home);
           },
@@ -48,23 +48,21 @@ class RealtimePage extends GetView<RealtimeController> {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 5,
-                        vertical: 10,
-                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: Colors.blue,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
+                                  padding: EdgeInsets.only(
                                     left: 10,
                                     right: 10,
                                   ),
@@ -75,8 +73,8 @@ class RealtimePage extends GetView<RealtimeController> {
                                         width: 10,
                                         height: 10,
                                       ),
-                                      const Text(
-                                        "  성남호",
+                                      Text(
+                                        "성남호",
                                         style: TextStyle(
                                           color: Colors.white,
                                         ),
@@ -87,11 +85,11 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: Colors.white,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
+                                  padding: EdgeInsets.only(
                                     left: 10,
                                     right: 10,
                                   ),
@@ -102,8 +100,8 @@ class RealtimePage extends GetView<RealtimeController> {
                                         width: 10,
                                         height: 10,
                                       ),
-                                      const Text(
-                                        "  판교호",
+                                      Text(
+                                        "판교호",
                                         style: TextStyle(
                                           color: Colors.black,
                                         ),
@@ -114,11 +112,11 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: Colors.white,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
+                                  padding: EdgeInsets.only(
                                     left: 10,
                                     right: 10,
                                   ),
@@ -129,8 +127,8 @@ class RealtimePage extends GetView<RealtimeController> {
                                         width: 10,
                                         height: 10,
                                       ),
-                                      const Text(
-                                        "  분당호",
+                                      Text(
+                                        "분당호",
                                         style: TextStyle(
                                           color: Colors.black,
                                         ),
@@ -149,13 +147,13 @@ class RealtimePage extends GetView<RealtimeController> {
                                   Icon(
                                     Icons.warning,
                                     color: Colors.yellow,
-                                    size: 45,
+                                    size: 30,
                                   ),
                                   SizedBox(width: 5),
                                   Text(
                                     "상황발생",
                                     style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -163,7 +161,7 @@ class RealtimePage extends GetView<RealtimeController> {
                                   Icon(
                                     Icons.warning,
                                     color: Colors.yellow,
-                                    size: 45,
+                                    size: 30,
                                   ),
                                 ],
                               ),
@@ -173,7 +171,7 @@ class RealtimePage extends GetView<RealtimeController> {
                                   Text(
                                     "발생 시간: 2023/08/10 10:45:30",
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -185,11 +183,11 @@ class RealtimePage extends GetView<RealtimeController> {
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: Colors.blue,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
+                                  padding: EdgeInsets.only(
                                     left: 10,
                                     right: 10,
                                   ),
@@ -200,8 +198,8 @@ class RealtimePage extends GetView<RealtimeController> {
                                         width: 10,
                                         height: 10,
                                       ),
-                                      const Text(
-                                        "  방1",
+                                      Text(
+                                        "방1",
                                         style: TextStyle(
                                           color: Colors.white,
                                         ),
@@ -212,11 +210,11 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: Colors.white,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
+                                  padding: EdgeInsets.only(
                                     left: 10,
                                     right: 10,
                                   ),
@@ -227,8 +225,8 @@ class RealtimePage extends GetView<RealtimeController> {
                                         width: 10,
                                         height: 10,
                                       ),
-                                      const Text(
-                                        "  방2",
+                                      Text(
+                                        "방2",
                                         style: TextStyle(
                                           color: Colors.black,
                                         ),
@@ -239,11 +237,11 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(30),
                                   color: Colors.white,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
+                                  padding: EdgeInsets.only(
                                     left: 10,
                                     right: 10,
                                   ),
@@ -254,8 +252,8 @@ class RealtimePage extends GetView<RealtimeController> {
                                         width: 10,
                                         height: 10,
                                       ),
-                                      const Text(
-                                        "  방3",
+                                      Text(
+                                        "방3",
                                         style: TextStyle(
                                           color: Colors.black,
                                         ),
@@ -284,10 +282,10 @@ class RealtimePage extends GetView<RealtimeController> {
                     ),
                     ElevatedButton.icon(
                       onPressed: () {
-                        PopupDialog.showPopup(context);
+                        DialogExtinguisher.showPopup(context);
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 255, 17, 0),
+                        backgroundColor: Color.fromARGB(255, 255, 17, 0),
                       ),
                       label: Text(
                         '소 화',
@@ -343,88 +341,103 @@ List<String> imagePaths = [
   'assets/images/5.png',
 ];
 
-class PopupDialog {
+class DialogExtinguisher {
   static void showPopup(BuildContext context) {
     final RealtimeController controller = Get.put(RealtimeController());
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          content: SizedBox(
-            width: 400,
-            height: 300,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 160,
-                  width: 350,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.asset(
-                      'assets/images/imageSlideshow/home.png',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 15),
-                Center(
-                  child: Text(
-                    '정말로 끄시겠습니까?',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        controller.operatedExtinguisher;
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 255, 17, 0),
-                        minimumSize: const Size(100, 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
+            side: BorderSide(color: Colors.grey, width: 2.5),
+          ),
+          /* contentPadding: EdgeInsets.zero, */
+          content: Wrap(
+            children: [
+              Column(
+                children: [
+                  SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        'assets/images/imageSlideshow/home.png',
+                        fit: BoxFit.cover,
                       ),
-                      child: Row(
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Center(
+                    child: Text(
+                      '정말로 끄시겠습니까?',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Wrap(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset(
-                            'assets/icons/extinguisher.png',
-                            width: 35,
-                            height: 35,
+                          ElevatedButton(
+                            onPressed: () {
+                              controller.operatedExtinguisher;
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 255, 17, 0),
+                              minimumSize: Size(100, 50),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/icons/extinguisher.png',
+                                  width: 35,
+                                  height: 35,
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  "네",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          const SizedBox(width: 10),
-                          const Text(
-                            "Yes",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.grey,
+                              minimumSize: Size(100, 50),
+                            ),
+                            child: Text(
+                              "아니오",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey,
-                        minimumSize: const Size(100, 50),
-                      ),
-                      child: const Text(
-                        "아니오",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         );
       },

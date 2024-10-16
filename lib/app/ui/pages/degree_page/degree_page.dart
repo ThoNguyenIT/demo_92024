@@ -15,7 +15,7 @@ class DegreePage extends GetView<DegreeController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Get.offAllNamed(AppRoutes.home);
           },
@@ -25,7 +25,7 @@ class DegreePage extends GetView<DegreeController> {
         child: Column(
           children: [
             SfCartesianChart(
-              primaryXAxis: const CategoryAxis(
+              primaryXAxis: CategoryAxis(
                 isVisible: false,
               ),
               trackballBehavior: TrackballBehavior(
@@ -110,7 +110,7 @@ class DegreePage extends GetView<DegreeController> {
                           color: Colors.blue,
                         ),
                       ),
-                      child: const Row(
+                      child: Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.all(8.0),
@@ -135,7 +135,7 @@ class DegreePage extends GetView<DegreeController> {
                             color: Colors.grey,
                           ),
                         ),
-                        child: const Row(
+                        child: Row(
                           children: [
                             Padding(
                               padding: EdgeInsets.all(8.0),

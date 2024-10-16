@@ -39,7 +39,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14),
+                padding: EdgeInsets.symmetric(horizontal: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -53,7 +53,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         Text(
                           '수동 조작 모드',
                           style: TextStyle(
@@ -104,7 +104,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         Text(
                           '선박 이름 변경',
                           style: TextStyle(
@@ -149,7 +149,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         Text(
                           '방 이름 변경',
                           style: TextStyle(
@@ -194,8 +194,8 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(width: 10),
-                        const Text(
+                        SizedBox(width: 10),
+                        Text(
                           '날씨 위치 변경',
                           style: TextStyle(
                             color: Colors.black,
@@ -239,7 +239,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         Text(
                           '센서 리스트 변경',
                           style: TextStyle(
@@ -284,7 +284,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         Text(
                           '선박 추가',
                           style: TextStyle(

@@ -35,9 +35,9 @@ class HomePage extends GetView<HomeController> {
         child: ListView(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 10),
+              padding: EdgeInsets.only(top: 10),
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Color.fromARGB(255, 227, 227, 227),
                   border: Border(
                     left: BorderSide(
@@ -47,7 +47,7 @@ class HomePage extends GetView<HomeController> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: TextButton(
                     onPressed: () {
                       Get.toNamed(AppRoutes.optionmenu);
@@ -106,7 +106,7 @@ class HomePage extends GetView<HomeController> {
                 ),
                 Container(
                   color: Colors.transparent,
-                  child: const TabBar(
+                  child: TabBar(
                     labelColor: Colors.black,
                     unselectedLabelColor: Colors.white,
                     indicator: BoxDecoration(
@@ -149,7 +149,7 @@ class HomePage extends GetView<HomeController> {
                 ),
               ],
             ),
-            const Expanded(
+            Expanded(
               child: TabBarView(
                 children: [
                   Room1Page(),
