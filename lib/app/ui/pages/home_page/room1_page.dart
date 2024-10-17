@@ -2,6 +2,7 @@ import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:demo_92024/app/ui/global_widgets/global_badge.dart';
 import 'package:demo_92024/app/ui/pages/camera_page/camera_page.dart';
 import 'package:demo_92024/app/ui/pages/degree_page/degree_page.dart';
+import 'package:demo_92024/app/ui/pages/dialogsns_page/dialogsns_page.dart';
 import 'package:demo_92024/app/ui/pages/record_page/record_page.dart';
 import 'package:demo_92024/app/ui/pages/smokeview_page/smoke_page.dart';
 import 'package:demo_92024/app/ui/pages/spark_page/spark_page.dart';
@@ -268,7 +269,7 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            /* TextButton(
+            TextButton(
               onPressed: () {
                 showDialog(
                   context: context,
@@ -295,7 +296,7 @@ class _Room1PageState extends State<Room1Page> {
                 'Pop Dialog from sns',
                 style: TextStyle(color: Colors.white),
               ),
-            ), */
+            ),
             /* ...List.generate(
             5,
             (index) => ElevatedButton(

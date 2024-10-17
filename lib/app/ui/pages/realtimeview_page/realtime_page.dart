@@ -1,8 +1,6 @@
 import 'package:demo_92024/app/controllers/home_controller.dart';
 import 'package:demo_92024/app/controllers/realtime_controller.dart';
 import 'package:demo_92024/app/routes/app_routes.dart';
-import 'package:demo_92024/app/ui/pages/realtimeview_page/dialog_extinguisher.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -284,27 +282,11 @@ class RealtimePage extends GetView<RealtimeController> {
                     ),
                     ElevatedButton.icon(
                       onPressed: () {
-                        showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              backgroundColor: Colors.white,
-                              /* contentPadding: EdgeInsets.zero, */
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                                side:
-                                    BorderSide(color: Colors.grey, width: 2.5),
-                              ),
-                              content: DialogExtinguisher(),
-                            );
-                          },
-                        );
+                        DialogExtinguisher.showPopup(context);
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 255, 17, 0)),
+                        backgroundColor: Color.fromARGB(255, 255, 17, 0),
+                      ),
                       label: Text(
                         '소 화',
                         style: TextStyle(
@@ -358,3 +340,108 @@ List<String> imagePaths = [
   'assets/images/4.png',
   'assets/images/5.png',
 ];
+
+class DialogExtinguisher {
+  static void showPopup(BuildContext context) {
+    final RealtimeController controller = Get.put(RealtimeController());
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          /* contentPadding: EdgeInsets.zero, */
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
+            side: BorderSide(color: Colors.grey, width: 2.5),
+          ),
+          content: Wrap(
+            children: [
+              Column(
+                children: [
+                  SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        'assets/images/imageSlideshow/home.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Center(
+                    child: Text(
+                      '정말로 끄시겠습니까?',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Wrap(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              controller.operatedExtinguisher;
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 255, 17, 0),
+                              minimumSize: Size(100, 50),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/icons/extinguisher.png',
+                                  width: 35,
+                                  height: 35,
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  "네",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.grey,
+                              minimumSize: Size(100, 50),
+                            ),
+                            child: Text(
+                              "아니오",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
