@@ -14,11 +14,15 @@ class SparkPage extends GetView<SparkController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
-              onPressed: () => Get.offAllNamed(AppRoutes.home)),
-          elevation: 0,
-          backgroundColor: Colors.transparent),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Get.offAllNamed(AppRoutes.home);
+          },
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -27,34 +31,40 @@ class SparkPage extends GetView<SparkController> {
               child: Obx(
                 () => controller.sparkData.isNotEmpty
                     ? SfCartesianChart(
-                        primaryXAxis: CategoryAxis(isVisible: false),
+                        primaryXAxis: CategoryAxis(
+                          isVisible: false,
+                        ),
                         primaryYAxis: NumericAxis(
-                            isVisible: false,
-                            maximum: 1,
-                            minimum: 0,
-                            interval: 1),
+                          maximum: 1,
+                          minimum: 0,
+                          interval: 1,
+                          isVisible: false,
+                        ),
                         trackballBehavior: TrackballBehavior(
-                            enable: true,
-                            tooltipDisplayMode:
-                                TrackballDisplayMode.groupAllPoints,
-                            tooltipSettings: InteractiveTooltip(
-                                borderWidth: 4,
-                                format: 'Status: point.y',
-                                borderColor: Colors.amber),
-                            lineWidth: 4,
-                            lineColor: Colors.amber,
-                            shouldAlwaysShow: true,
-                            activationMode: ActivationMode.singleTap),
+                          enable: true,
+                          lineWidth: 4,
+                          lineColor: Colors.amber,
+                          shouldAlwaysShow: true,
+                          activationMode: ActivationMode.singleTap,
+                          tooltipDisplayMode:
+                              TrackballDisplayMode.groupAllPoints,
+                          tooltipSettings: InteractiveTooltip(
+                            borderColor: Colors.amber,
+                            borderWidth: 4,
+                            format: 'Status: point.y',
+                          ),
+                        ),
                         series: <ColumnSeries<SparkData, String>>[
                           ColumnSeries<SparkData, String>(
-                              width: 1,
-                              spacing: 0,
-                              dataSource: controller.sparkData,
-                              yValueMapper: (SparkData data, _) => 1,
-                              xValueMapper: (SparkData data, _) =>
-                                  '${data.time.hour.toString().padLeft(2, '0')}:${data.time.minute.toString().padLeft(2, '0')}',
-                              pointColorMapper: (SparkData data, _) =>
-                                  data.on ? Colors.blue[800] : Colors.red[800])
+                            dataSource: controller.sparkData,
+                            spacing: 0,
+                            width: 1,
+                            xValueMapper: (SparkData data, _) =>
+                                '${data.time.hour.toString().padLeft(2, '0')}:${data.time.minute.toString().padLeft(2, '0')}',
+                            yValueMapper: (SparkData data, _) => 1,
+                            pointColorMapper: (SparkData data, _) =>
+                                data.on ? Colors.blue[800] : Colors.red[800],
+                          ),
                         ],
                       )
                     : Center(child: CircularProgressIndicator()),
@@ -62,44 +72,53 @@ class SparkPage extends GetView<SparkController> {
             ),
             Expanded(
               flex: 4,
-              child: Scrollbar(
-                interactive: false,
-                radius: Radius.circular(90),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  children: [
+              child: ListView(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        width: 3,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "2024.10.10",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  for (var i = 0; i < 100; i++)
                     Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 3, color: Colors.blue)),
-                        child: GestureDetector(
-                            onTap: () => print('2024.10.10 spark'),
-                            child: Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Text("2024.10.10",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold))))),
-                    /*
-                    for (var i = 0; i < 10; i++)
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 3, color: Colors.blue)),
-                        child: GestureDetector(
-                            child: Padding(
-                                padding: EdgeInsets.all(8),
-                                child: Text("2024.10.10",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold))),
-                            onTap: () => print('2024.10.10 spark'))),
-                    */
-                  ],
-                ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "2024.10.09",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
           ],
@@ -107,4 +126,10 @@ class SparkPage extends GetView<SparkController> {
       ),
     );
   }
+}
+
+class Data {
+  Data(this.time, this.on);
+  final String time;
+  final bool on;
 }
