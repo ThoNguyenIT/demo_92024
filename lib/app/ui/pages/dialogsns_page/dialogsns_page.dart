@@ -345,3 +345,23 @@ List<String> imagePaths = [
   'assets/images/4.png',
   'assets/images/5.png',
 ];
+
+/* 
+showDialog(
+  context: context,
+  barrierDismissible: false,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.white,
+      /* contentPadding: EdgeInsets.zero, */
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
+        ),
+        side: BorderSide(color: Colors.grey, width: 2.5),
+      ),
+      content: const DialogsnsPage(),
+    );
+  },
+);
+*/

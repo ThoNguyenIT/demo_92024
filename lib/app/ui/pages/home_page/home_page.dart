@@ -46,26 +46,23 @@ class HomePage extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: TextButton(
-                    onPressed: () {
-                      Get.toNamed(AppRoutes.optionmenu);
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '설정',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
+                child: TextButton(
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.optionmenu);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '설정',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Icon(Icons.settings_applications_sharp),
-                      ],
-                    ),
+                      ),
+                      Icon(Icons.settings_applications_sharp),
+                    ],
                   ),
                 ),
               ),
