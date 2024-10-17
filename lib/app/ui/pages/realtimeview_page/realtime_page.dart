@@ -304,8 +304,7 @@ class RealtimePage extends GetView<RealtimeController> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 255, 17, 0),
-                      ),
+                          backgroundColor: Color.fromARGB(255, 255, 17, 0)),
                       label: Text(
                         '소 화',
                         style: TextStyle(
