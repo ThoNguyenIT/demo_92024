@@ -557,14 +557,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.9.1"
-  video_player_android:
-    dependency: transitive
-    description:
-      name: video_player_android
-      sha256: "45d21bbba3d10b7182aa08ade5d4c68ed3367016d40f29732bb04a799b26842d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.7.5"
+
   video_player_avfoundation:
     dependency: transitive
     description:
