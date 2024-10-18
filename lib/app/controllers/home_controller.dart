@@ -1,4 +1,4 @@
-import 'package:demo_92024/app/data/models/level_data.dart';
+import 'package:getx_flutter_template/app/data/models/level_data.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {

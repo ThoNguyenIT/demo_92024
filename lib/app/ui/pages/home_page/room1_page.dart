@@ -1,6 +1,6 @@
-import 'package:demo_92024/app/controllers/home_controller.dart';
-import 'package:demo_92024/app/routes/app_routes.dart';
-import 'package:demo_92024/app/ui/global_widgets/global_badge.dart';
+import 'package:getx_flutter_template/app/controllers/home_controller.dart';
+import 'package:getx_flutter_template/app/routes/app_routes.dart';
+import 'package:getx_flutter_template/app/ui/global_widgets/global_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

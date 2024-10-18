@@ -1,5 +1,5 @@
-import 'package:demo_92024/app/controllers/home_controller.dart';
-import 'package:demo_92024/app/ui/pages/realtimeview_page/realtime_page.dart';
+import 'package:getx_flutter_template/app/controllers/home_controller.dart';
+import 'package:getx_flutter_template/app/ui/pages/realtimeview_page/realtime_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/dialogsns_controller.dart';

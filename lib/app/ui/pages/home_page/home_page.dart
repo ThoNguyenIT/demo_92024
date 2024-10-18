@@ -1,4 +1,4 @@
-import 'package:demo_92024/app/routes/app_routes.dart';
+import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';

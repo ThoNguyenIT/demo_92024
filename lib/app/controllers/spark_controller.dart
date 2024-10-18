@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:demo_92024/app/data/models/raw_data.dart';
+import 'package:getx_flutter_template/app/data/models/raw_data.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
