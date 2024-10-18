@@ -22,35 +22,28 @@ class HomePage extends GetView<HomeController> {
             );
           })),
       drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-          children: <Widget>[
+          backgroundColor: Colors.white,
+          child: ListView(children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 227, 227, 227),
-                    border:
-                        Border(left: BorderSide(width: 5, color: Colors.blue))),
-                child: TextButton(
-                  onPressed: () => Get.toNamed(AppRoutes.optionmenu),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(Icons.settings_applications_sharp),
-                      Text('설정',
-                          style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold))
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+                padding: EdgeInsets.only(top: 10),
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 227, 227, 227),
+                        border: Border(
+                            left: BorderSide(width: 5, color: Colors.blue))),
+                    child: TextButton(
+                        onPressed: () => Get.toNamed(AppRoutes.optionmenu),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('설정',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold)),
+                              Icon(Icons.settings_applications_sharp),
+                            ]))))
+          ])),
       body: DefaultTabController(
         length: 3,
         child: Column(

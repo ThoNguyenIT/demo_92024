@@ -98,11 +98,7 @@ class LoginPage extends GetView<LoginController> {
                         controller.validateFields();
                         if (controller.id.value.isNotEmpty &&
                             controller.pw.value.isNotEmpty) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ));
+                          Get.offAll(HomePage());
                         }
                       },
                       style: ElevatedButton.styleFrom(

@@ -30,6 +30,7 @@ class PrerecordPage extends GetView<PrerecordController> {
             flex: 2,
             child: Scrollbar(
               interactive: false,
+              thickness: 10,
               radius: Radius.circular(90),
               child: ListView(
                 padding: EdgeInsets.zero,

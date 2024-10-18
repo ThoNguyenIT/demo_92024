@@ -64,6 +64,7 @@ class SparkPage extends GetView<SparkController> {
               flex: 4,
               child: Scrollbar(
                 interactive: false,
+                thickness: 10,
                 radius: Radius.circular(90),
                 child: ListView(
                   padding: EdgeInsets.zero,

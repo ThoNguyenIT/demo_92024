@@ -92,6 +92,7 @@ class DegreePage extends GetView<DegreeController> {
             Expanded(
               child: Scrollbar(
                 interactive: false,
+                thickness: 10,
                 radius: Radius.circular(90),
                 child: ListView(
                   children: [
