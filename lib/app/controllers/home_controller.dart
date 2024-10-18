@@ -4,30 +4,20 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   var isAutoMode = false.obs;
   var isExpanded = false.obs;
-
   var currentData = LevelData(isActive: false, level: 4).obs;
 
-  void toogleSwitch(bool value) {
+  void autoMode(bool value) {
     isAutoMode.value = value;
     print("Auto/Manual was changed: $value");
   }
 
-  void toggleExpaned(bool value) {
-    isExpanded.value = value;
-    print("isExpanded was changed: $value");
-  }
-
-  void toggleActive() {
+  void activeExtinguisher() {
     currentData.update((val) {
       val!.isActive = !val.isActive;
     });
   }
 
   void setLevel(int newLevel) {
-    currentData.update(
-      (val) {
-        val!.level = newLevel;
-      },
-    );
+    currentData.update((val) => val!.level = newLevel);
   }
 }

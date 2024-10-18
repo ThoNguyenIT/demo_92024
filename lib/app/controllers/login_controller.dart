@@ -10,7 +10,7 @@ class LoginController extends GetxController {
     showPassword.toggle();
   }
 
-  void toggleAutoLogin(bool? value) {
+  void autoLogin(bool? value) {
     isAutoLogin.value = value ?? false;
   }
 

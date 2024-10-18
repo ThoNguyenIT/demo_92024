@@ -12,11 +12,11 @@ class DegreePage extends GetView<DegreeController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () => Get.offAllNamed(AppRoutes.home)),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
       ),
       body: SafeArea(
         child: Column(
@@ -24,16 +24,18 @@ class DegreePage extends GetView<DegreeController> {
             SfCartesianChart(
               primaryXAxis: CategoryAxis(isVisible: false),
               trackballBehavior: TrackballBehavior(
+                enable: true,
+                activationMode: ActivationMode.singleTap,
+                lineWidth: 3,
+                /* lineColor: Colors.amber, */
+                tooltipDisplayMode: TrackballDisplayMode.groupAllPoints,
+                tooltipSettings: InteractiveTooltip(
                   enable: true,
-                  activationMode: ActivationMode.singleTap,
-                  lineWidth: 3,
-                  /* lineColor: Colors.amber, */
-                  tooltipDisplayMode: TrackballDisplayMode.groupAllPoints,
-                  tooltipSettings: InteractiveTooltip(
-                      enable: true,
-                      format: 'Status: point.y%',
-                      borderColor: Colors.amber,
-                      borderWidth: 3)),
+                  format: 'Status: point.y%',
+                  borderColor: Colors.amber,
+                  borderWidth: 3,
+                ),
+              ),
               series: <LineSeries<Data, String>>[
                 LineSeries<Data, String>(
                   dataSource: <Data>[
@@ -97,19 +99,26 @@ class DegreePage extends GetView<DegreeController> {
                 child: ListView(
                   children: [
                     Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 3, color: Colors.blue)),
-                        child: GestureDetector(
-                            onTap: () => print('degree data'),
-                            child: Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Text("2023.08.07",
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold))))),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 3, color: Colors.blue),
+                      ),
+                      child: GestureDetector(
+                        onTap: () => print('degree data'),
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            "2023.08.07",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

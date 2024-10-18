@@ -14,11 +14,12 @@ class SmokePage extends GetView<SmokeController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
-              onPressed: () => Get.offAllNamed(AppRoutes.home)),
-          elevation: 0,
-          backgroundColor: Colors.transparent),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
+            onPressed: () => Get.offAllNamed(AppRoutes.home)),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -34,17 +35,18 @@ class SmokePage extends GetView<SmokeController> {
                             minimum: 0,
                             interval: 1),
                         trackballBehavior: TrackballBehavior(
-                            tooltipDisplayMode:
-                                TrackballDisplayMode.groupAllPoints,
-                            tooltipSettings: InteractiveTooltip(
-                                borderWidth: 4,
-                                format: 'Status: point.y',
-                                borderColor: Colors.amber),
-                            enable: true,
-                            lineWidth: 4,
-                            lineColor: Colors.amber,
-                            shouldAlwaysShow: true,
-                            activationMode: ActivationMode.singleTap),
+                          tooltipDisplayMode:
+                              TrackballDisplayMode.groupAllPoints,
+                          tooltipSettings: InteractiveTooltip(
+                              borderWidth: 4,
+                              format: 'Status: point.y',
+                              borderColor: Colors.amber),
+                          enable: true,
+                          lineWidth: 4,
+                          lineColor: Colors.amber,
+                          shouldAlwaysShow: true,
+                          activationMode: ActivationMode.singleTap,
+                        ),
                         series: <ColumnSeries<SmokeData, String>>[
                           ColumnSeries<SmokeData, String>(
                               width: 1,
@@ -71,18 +73,24 @@ class SmokePage extends GetView<SmokeController> {
                   shrinkWrap: true,
                   children: [
                     Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 3, color: Colors.blue)),
-                        child: GestureDetector(
-                            onTap: () => print('2024.10.10 smoke'),
-                            child: Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Text("2024.10.10",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold))))),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 3, color: Colors.blue),
+                      ),
+                      child: GestureDetector(
+                        onTap: () => print('2024.10.10 smoke'),
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            "2024.10.10",
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
                     /*
                     for (var i = 0; i < 10; i++)
                       Container(

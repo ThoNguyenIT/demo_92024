@@ -14,11 +14,12 @@ class SparkPage extends GetView<SparkController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
-              onPressed: () => Get.offAllNamed(AppRoutes.home)),
-          elevation: 0,
-          backgroundColor: Colors.transparent),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
+            onPressed: () => Get.offAllNamed(AppRoutes.home)),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -71,18 +72,24 @@ class SparkPage extends GetView<SparkController> {
                   shrinkWrap: true,
                   children: [
                     Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 3, color: Colors.blue)),
-                        child: GestureDetector(
-                            onTap: () => print('2024.10.10 spark'),
-                            child: Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Text("2024.10.10",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold))))),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 3, color: Colors.blue),
+                      ),
+                      child: GestureDetector(
+                        onTap: () => print('2024.10.10 spark'),
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            "2024.10.10",
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
                     /*
                     for (var i = 0; i < 10; i++)
                       Container(
