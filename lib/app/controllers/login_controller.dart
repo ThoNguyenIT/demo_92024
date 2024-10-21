@@ -3,12 +3,7 @@ import 'package:get/get.dart';
 class LoginController extends GetxController {
   var id = ''.obs;
   var pw = ''.obs;
-  var showPassword = false.obs;
   var isAutoLogin = false.obs;
-
-  void togglePasswordVisibility() {
-    showPassword.toggle();
-  }
 
   void autoLogin(bool? value) {
     isAutoLogin.value = value ?? false;

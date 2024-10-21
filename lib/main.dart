@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      /*theme: ThemeData(primarySwatch: Colors.blue),
-      check this one --> https://github.com/hasancse91/flutter_getx_template/tree/master 
+      theme: ThemeData(primarySwatch: Colors.blue),
+      /*check this one --> https://github.com/hasancse91/flutter_getx_template/tree/master 
       initialBinding: InitialBinding(), : initialBinding: LoginPage(),*/
       initialRoute: AppRoutes.login,
       getPages: AppPages.pages,

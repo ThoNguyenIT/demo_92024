@@ -9,6 +9,11 @@ class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     final LoginController controller = Get.put(LoginController());
+    var showHidden = false.obs;
+    void showPass() {
+      showHidden.toggle();
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -43,7 +48,7 @@ class LoginPage extends GetView<LoginController> {
                   SizedBox(height: 20),
                   Obx(
                     () => TextFormField(
-                      obscureText: !controller.showPassword.value,
+                      obscureText: !showHidden.value,
                       onChanged: (value) => controller.pw.value = value,
                       style: TextStyle(fontSize: 30, color: Colors.black),
                       decoration: InputDecoration(
@@ -57,10 +62,9 @@ class LoginPage extends GetView<LoginController> {
                         labelStyle:
                             TextStyle(fontSize: 30, color: Colors.white),
                         suffixIcon: IconButton(
-                          onPressed: () =>
-                              controller.togglePasswordVisibility(),
+                          onPressed: () => showPass(),
                           icon: Icon(
-                              controller.showPassword.value
+                              showHidden.value
                                   ? Icons.visibility
                                   : Icons.visibility_off,
                               color: Colors.white),
@@ -91,7 +95,7 @@ class LoginPage extends GetView<LoginController> {
                     ),
                   ),
                   SizedBox(height: 16),
-                  ElevatedButton(
+                  /* ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                         shape: StadiumBorder(),
@@ -103,13 +107,13 @@ class LoginPage extends GetView<LoginController> {
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(height: 16), */
                   ElevatedButton(
                     onPressed: () {
                       controller.validateFields();
                       if (controller.id.value.isNotEmpty &&
                           controller.pw.value.isNotEmpty) {
-                        Get.offAll(HomePage());
+                        Get.offAll(() => HomePage());
                       }
                     },
                     style: ElevatedButton.styleFrom(

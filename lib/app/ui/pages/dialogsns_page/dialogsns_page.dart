@@ -212,7 +212,10 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(100, 50), backgroundColor: Colors.red),
+                      minimumSize: Size(100, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      backgroundColor: Colors.red),
                   child: Text("YES",
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold)),
@@ -220,7 +223,10 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                 ElevatedButton(
                   onPressed: () => Navigator.of(context).pop(),
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(100, 50), backgroundColor: Colors.grey),
+                      minimumSize: Size(100, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      backgroundColor: Colors.grey),
                   child: Text("NO",
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold)),
@@ -241,23 +247,3 @@ List<String> imagePaths = [
   'assets/images/4.png',
   'assets/images/5.png',
 ];
-
-/* 
-showDialog(
-  context: context,
-  barrierDismissible: false,
-  builder: (BuildContext context) {
-    return AlertDialog(
-      backgroundColor: Colors.white,
-      /* contentPadding: EdgeInsets.zero, */
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(15),
-        ),
-        side: BorderSide(color: Colors.grey, width: 2.5),
-      ),
-      content: const DialogsnsPage(),
-    );
-  },
-);
-*/

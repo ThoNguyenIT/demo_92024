@@ -224,13 +224,7 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-/*           TextButton(
+            /* TextButton(
               onPressed: () {
                 showDialog(
                   context: context,
@@ -241,11 +235,11 @@ class _Room1PageState extends State<Room1Page> {
                       /* contentPadding: EdgeInsets.zero, */
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
-                          Radius.circular(15),
+                          Radius.circular(15)
                         ),
                         side: BorderSide(color: Colors.grey, width: 2.5),
                       ),
-                      content: const DialogsnsPage(),
+                      content: DialogsnsPage(),
                     );
                   },
                 );
@@ -259,9 +253,15 @@ class _Room1PageState extends State<Room1Page> {
               ),
             ),
             ...List.generate(
-            5,
-            (index) => ElevatedButton(
-            onPressed: () => controller.setLevel(index + 1),
-            child: Text('Set Level ${index + 1}'),
-            ),
+              5,
+              (index) => ElevatedButton(
+                onPressed: () => controller.setLevel(index + 1),
+                child: Text('Set Level ${index + 1}'),
+              ),
             ), */
+          ],
+        ),
+      ),
+    );
+  }
+}

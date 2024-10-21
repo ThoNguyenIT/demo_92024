@@ -85,6 +85,105 @@ class HomePage extends GetView<HomeController> {
                         fit: BoxFit.cover),
                   ],
                 ),
+                Positioned(
+                  top: 170,
+                  left: 15,
+                  right: 10,
+                  bottom: 0,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white30,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                      child: Image.asset(
+                                          'assets/images/room1.png')),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    'Room 1',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                      child: Image.asset(
+                                          'assets/images/room2.png')),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    'Room 1',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                      child: Image.asset(
+                                          'assets/images/room3.png')),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    'Room 1',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Opacity(
+                        opacity: 0.6,
+                        child: InkWell(
+                          onTap: () => print("Image button pressed"),
+                          child: Image.asset(
+                            'assets/images/ship_add.png',
+                            width: 70,
+                            height: 70,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Container(
                   color: Colors.transparent,
                   child: TabBar(

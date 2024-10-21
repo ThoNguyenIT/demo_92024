@@ -23,10 +23,8 @@ class DialogExtinguisher extends StatelessWidget {
             ),
             SizedBox(height: 5),
             Center(
-              child: Text(
-                '정말로 끄시겠습니까?',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+              child: Text('정말로 끄시겠습니까?',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             SizedBox(height: 5),
             Wrap(

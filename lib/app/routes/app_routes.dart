@@ -9,4 +9,6 @@ class AppRoutes {
   static const spark = '/spark';
   static const smoke = '/smoke';
   static const degree = '/degree';
+  static const account = '/account';
+  static const changeroom = '/changeroom';
 }

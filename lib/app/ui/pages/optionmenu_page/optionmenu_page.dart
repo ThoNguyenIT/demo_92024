@@ -1,14 +1,13 @@
-import 'package:getx_flutter_template/app/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/optionmenu_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class OptionmenuPage extends GetView<OptionmenuController> {
   const OptionmenuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       appBar: AppBar(
         //automaticallyImplyLeading: false,
@@ -24,7 +23,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
+            /* Container(
               decoration: BoxDecoration(
                   color: Colors.white, border: Border.all(width: 0)),
               child: Padding(
@@ -63,7 +62,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                   ],
                 ),
               ),
-            ),
+            ), */
             Container(
               decoration: BoxDecoration(
                   color: Colors.white, border: Border.all(width: 0)),
@@ -132,6 +131,74 @@ class OptionmenuPage extends GetView<OptionmenuController> {
               ),
             ),
             Container(
+              decoration: BoxDecoration(
+                  color: Colors.white, border: Border.all(width: 0)),
+              child: GestureDetector(
+                onTap: () => Get.toNamed(AppRoutes.account),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: Image.asset('assets/icons/7.png',
+                                fit: BoxFit.contain),
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            '회원 정보 변경',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                      Icon(Icons.arrow_forward_ios,
+                          size: 20, color: Colors.black),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white, border: Border.all(width: 0)),
+              child: GestureDetector(
+                onTap: () => Get.toNamed(AppRoutes.changeroom),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(children: [
+                        SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: Image.asset('assets/icons/8.png',
+                              fit: BoxFit.contain),
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          '로그 보기',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ]),
+                      Icon(Icons.arrow_forward_ios,
+                          size: 20, color: Colors.black),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            /* Container(
               decoration: BoxDecoration(
                   color: Colors.white, border: Border.all(width: 0)),
               child: GestureDetector(
@@ -235,7 +302,7 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                   ),
                 ),
               ),
-            ),
+            ), */
           ],
         ),
       ),

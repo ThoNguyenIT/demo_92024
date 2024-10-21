@@ -1,4 +1,6 @@
+import 'package:getx_flutter_template/app/bindings/account_binding.dart';
 import 'package:getx_flutter_template/app/bindings/camera_binding.dart';
+import 'package:getx_flutter_template/app/bindings/changeroom_binding.dart';
 import 'package:getx_flutter_template/app/bindings/degree_binding.dart';
 import 'package:getx_flutter_template/app/bindings/home_binding.dart';
 import 'package:getx_flutter_template/app/bindings/login_binding.dart';
@@ -8,7 +10,9 @@ import 'package:getx_flutter_template/app/bindings/realtime_binding.dart';
 import 'package:getx_flutter_template/app/bindings/smoke_binding.dart';
 import 'package:getx_flutter_template/app/bindings/spark_binding.dart';
 import 'package:getx_flutter_template/app/routes/app_routes.dart';
+import 'package:getx_flutter_template/app/ui/pages/account_page/account_page.dart';
 import 'package:getx_flutter_template/app/ui/pages/camera_page/camera_page.dart';
+import 'package:getx_flutter_template/app/ui/pages/changeroom_page/changeroom_page.dart';
 import 'package:getx_flutter_template/app/ui/pages/degree_page/degree_page.dart';
 import 'package:getx_flutter_template/app/ui/pages/home_page/home_page.dart';
 import 'package:getx_flutter_template/app/ui/pages/login_page/login_page.dart';
@@ -36,6 +40,11 @@ class AppPages {
       name: AppRoutes.optionmenu,
       page: () => OptionmenuPage(),
       binding: OptionmenuBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.account,
+      page: () => AccountPage(),
+      binding: AccountBinding(),
     ),
     GetPage(
       name: AppRoutes.realtime,
@@ -71,6 +80,11 @@ class AppPages {
       name: AppRoutes.degree,
       page: () => DegreePage(),
       binding: DegreeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.changeroom,
+      page: () => ChangeroomPage(),
+      binding: ChangeroomBinding(),
     ),
   ];
 }
