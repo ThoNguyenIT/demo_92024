@@ -1,10 +1,11 @@
-import 'package:demo_92024/app/routes/app_routes.dart';
-import 'package:demo_92024/app/ui/pages/home_page/room1_page.dart';
-import 'package:demo_92024/app/ui/pages/home_page/room2_page.dart';
+import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
 import '../../../controllers/home_controller.dart';
+import 'room1_page.dart';
+import 'room2_page.dart';
+import 'room3_page.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -143,7 +144,7 @@ class HomePage extends GetView<HomeController> {
                 children: [
                   Room1Page(),
                   Room2Page(),
-                  Center(child: Text('Content for Room3')),
+                  Room3Page(),
                 ],
               ),
             ),

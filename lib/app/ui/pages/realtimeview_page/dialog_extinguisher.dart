@@ -1,4 +1,4 @@
-import 'package:demo_92024/app/controllers/realtime_controller.dart';
+import 'package:getx_flutter_template/app/controllers/realtime_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

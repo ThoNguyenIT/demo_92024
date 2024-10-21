@@ -1,4 +1,4 @@
-import 'package:demo_92024/app/ui/pages/home_page/home_page.dart';
+import 'package:getx_flutter_template/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/login_controller.dart';
