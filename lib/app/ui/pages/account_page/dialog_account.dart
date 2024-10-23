@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getx_flutter_template/app/ui/pages/account_page/dialog_delete.dart';
+import 'dialog_delete.dart';
 
 class DialogAccount extends StatelessWidget {
   const DialogAccount({super.key});

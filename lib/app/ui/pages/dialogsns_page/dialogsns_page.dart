@@ -1,8 +1,8 @@
-import 'package:getx_flutter_template/app/controllers/home_controller.dart';
-import 'package:getx_flutter_template/app/ui/pages/realtimeview_page/realtime_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/dialogsns_controller.dart';
+import '../../../controllers/home_controller.dart';
+import '../realtime_page/realtime_page.dart';
 
 class DialogsnsPage extends GetView<DialogsnsController> {
   const DialogsnsPage({super.key});

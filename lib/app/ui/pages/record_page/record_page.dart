@@ -1,7 +1,7 @@
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/record_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class RecordPage extends GetView<RecordController> {
   const RecordPage({super.key});

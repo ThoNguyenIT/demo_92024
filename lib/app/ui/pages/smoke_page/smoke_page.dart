@@ -1,9 +1,9 @@
-import 'package:getx_flutter_template/app/controllers/smoke_controller.dart';
-import 'package:getx_flutter_template/app/data/models/raw_data.dart';
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import '../../../controllers/smoke_controller.dart';
+import '../../../data/models/raw_data.dart';
+import '../../../routes/app_routes.dart';
 
 class SmokePage extends GetView<SmokeController> {
   const SmokePage({super.key});
@@ -54,7 +54,7 @@ class SmokePage extends GetView<SmokeController> {
                               dataSource: controller.smokeData,
                               yValueMapper: (SmokeData data, _) => 1,
                               xValueMapper: (SmokeData data, _) =>
-                                  '${data.time.hour.toString().padLeft(2, '0')}:${data.time.minute.toString().padLeft(2, '0')}',
+                                  '${data.time.hour.toString().padLeft(2, '0')}:${data.time.minute.toString().padLeft(2, '0')}:${data.time.second.toString().padLeft(2, '0')}',
                               pointColorMapper: (SmokeData data, _) =>
                                   data.on ? Colors.blue[800] : Colors.red[800])
                         ],

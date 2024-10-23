@@ -1,7 +1,7 @@
-import 'package:getx_flutter_template/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/login_controller.dart';
+import '../home_page/home_page.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});

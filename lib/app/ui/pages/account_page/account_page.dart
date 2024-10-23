@@ -14,6 +14,7 @@ class AccountPage extends GetView<AccountController> {
     /* void showPass() {
       showHidden.toggle();
     } */
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -28,7 +29,7 @@ class AccountPage extends GetView<AccountController> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -42,7 +43,7 @@ class AccountPage extends GetView<AccountController> {
                   children: [
                     Text('이름', style: TextStyle(fontWeight: FontWeight.bold)),
                     Container(
-                      width: MediaQuery.of(context).size.width / 1.5,
+                      width: MediaQuery.of(context).size.width / 1.6,
                       padding: EdgeInsets.zero,
                       decoration: BoxDecoration(
                         border: Border(
@@ -50,8 +51,7 @@ class AccountPage extends GetView<AccountController> {
                       ),
                       child: Center(
                         child: Text('홍길동',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ],
@@ -66,7 +66,7 @@ class AccountPage extends GetView<AccountController> {
                   children: [
                     Text('연락처', style: TextStyle(fontWeight: FontWeight.bold)),
                     Container(
-                      width: MediaQuery.of(context).size.width / 1.5,
+                      width: MediaQuery.of(context).size.width / 1.6,
                       padding: EdgeInsets.zero,
                       decoration: BoxDecoration(
                         border: Border(
@@ -74,8 +74,7 @@ class AccountPage extends GetView<AccountController> {
                       ),
                       child: Center(
                         child: Text('010-1234-1234',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ],
@@ -90,7 +89,7 @@ class AccountPage extends GetView<AccountController> {
                   children: [
                     Text('회사코드', style: TextStyle(fontWeight: FontWeight.bold)),
                     Container(
-                      width: MediaQuery.of(context).size.width / 1.5,
+                      width: MediaQuery.of(context).size.width / 1.6,
                       padding: EdgeInsets.zero,
                       decoration: BoxDecoration(
                         border: Border(
@@ -98,8 +97,7 @@ class AccountPage extends GetView<AccountController> {
                       ),
                       child: Center(
                         child: Text('008241',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ],
@@ -114,7 +112,7 @@ class AccountPage extends GetView<AccountController> {
                   children: [
                     Text('비밀번호', style: TextStyle(fontWeight: FontWeight.bold)),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width / 1.5,
+                      width: MediaQuery.of(context).size.width / 1.6,
                       child: Obx(
                         () => TextFormField(
                           obscureText: !showHidden.value,
@@ -139,7 +137,7 @@ class AccountPage extends GetView<AccountController> {
                                   showHidden.value
                                       ? Icons.visibility
                                       : Icons.visibility_off,
-                                  color: Colors.white),
+                                  color: Colors.black),
                             ), */
                           ),
                         ),
@@ -158,7 +156,7 @@ class AccountPage extends GetView<AccountController> {
                     Text('비밀번호 확인',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width / 1.5,
+                      width: MediaQuery.of(context).size.width / 1.6,
                       child: Obx(
                         () => TextFormField(
                           obscureText: !showHidden.value,
@@ -183,7 +181,7 @@ class AccountPage extends GetView<AccountController> {
                                   showHidden.value
                                       ? Icons.visibility
                                       : Icons.visibility_off,
-                                  color: Colors.white),
+                                  color: Colors.black),
                             ), */
                           ),
                         ),

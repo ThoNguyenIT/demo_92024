@@ -1,6 +1,6 @@
-import 'package:getx_flutter_template/app/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controllers/home_controller.dart';
 
 class Room2Page extends StatefulWidget {
   const Room2Page({super.key});

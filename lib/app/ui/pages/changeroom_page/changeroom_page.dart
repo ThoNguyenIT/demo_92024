@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_flutter_template/app/ui/pages/changeroom_page/dialog_rename.dart';
 import '../../../controllers/changeroom_controller.dart';
+import 'dialog_rename.dart';
 
 class ChangeroomPage extends GetView<ChangeroomController> {
   const ChangeroomPage({super.key});

@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:getx_flutter_template/app/data/models/raw_data.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '../data/models/raw_data.dart';
 
 class SmokeController extends GetxController {
   final RxList<SmokeData> smokeData = RxList<SmokeData>();

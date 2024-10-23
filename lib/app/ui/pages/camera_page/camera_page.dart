@@ -1,7 +1,7 @@
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/camera_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class CameraPage extends GetView<CameraController> {
   const CameraPage({super.key});

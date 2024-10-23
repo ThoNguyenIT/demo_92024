@@ -1,8 +1,8 @@
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
 import '../../../controllers/home_controller.dart';
+import '../../../routes/app_routes.dart';
 import 'room1_page.dart';
 import 'room2_page.dart';
 import 'room3_page.dart';
@@ -133,7 +133,7 @@ class HomePage extends GetView<HomeController> {
                                           'assets/images/room2.png')),
                                   SizedBox(width: 10),
                                   Text(
-                                    'Room 1',
+                                    'Room 2',
                                     style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.white,
@@ -157,7 +157,7 @@ class HomePage extends GetView<HomeController> {
                                           'assets/images/room3.png')),
                                   SizedBox(width: 10),
                                   Text(
-                                    'Room 1',
+                                    'Room 3',
                                     style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.white,

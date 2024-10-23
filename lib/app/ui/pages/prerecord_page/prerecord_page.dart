@@ -1,7 +1,7 @@
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/prerecord_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class PrerecordPage extends GetView<PrerecordController> {
   const PrerecordPage({super.key});

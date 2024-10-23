@@ -1,5 +1,5 @@
-import 'package:getx_flutter_template/app/data/models/level_data.dart';
 import 'package:get/get.dart';
+import '../data/models/level_data.dart';
 
 class HomeController extends GetxController {
   var isAutoMode = false.obs;

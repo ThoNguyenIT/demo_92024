@@ -1,9 +1,9 @@
-import 'package:getx_flutter_template/app/controllers/home_controller.dart';
-import 'package:getx_flutter_template/app/controllers/realtime_controller.dart';
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
-import 'package:getx_flutter_template/app/ui/pages/realtimeview_page/dialog_extinguisher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controllers/home_controller.dart';
+import '../../../controllers/realtime_controller.dart';
+import '../../../routes/app_routes.dart';
+import 'dialog_extinguisher.dart';
 
 class RealtimePage extends GetView<RealtimeController> {
   const RealtimePage({super.key});

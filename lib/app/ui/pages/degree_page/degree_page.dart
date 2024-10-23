@@ -1,8 +1,8 @@
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import '../../../controllers/degree_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class DegreePage extends GetView<DegreeController> {
   const DegreePage({super.key});

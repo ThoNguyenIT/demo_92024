@@ -1,8 +1,9 @@
-import 'package:getx_flutter_template/app/controllers/home_controller.dart';
-import 'package:getx_flutter_template/app/routes/app_routes.dart';
-import 'package:getx_flutter_template/app/ui/global_widgets/global_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controllers/home_controller.dart';
+import '../../../routes/app_routes.dart';
+import '../../global_widgets/g_badge.dart';
+import '../dialogsns_page/dialogsns_page.dart';
 
 class Room1Page extends StatefulWidget {
   const Room1Page({super.key});
@@ -224,7 +225,7 @@ class _Room1PageState extends State<Room1Page> {
                 ),
               ),
             ),
-            /* TextButton(
+            TextButton(
               onPressed: () {
                 showDialog(
                   context: context,
@@ -234,9 +235,7 @@ class _Room1PageState extends State<Room1Page> {
                       backgroundColor: Colors.white,
                       /* contentPadding: EdgeInsets.zero, */
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15)
-                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                         side: BorderSide(color: Colors.grey, width: 2.5),
                       ),
                       content: DialogsnsPage(),
@@ -258,7 +257,7 @@ class _Room1PageState extends State<Room1Page> {
                 onPressed: () => controller.setLevel(index + 1),
                 child: Text('Set Level ${index + 1}'),
               ),
-            ), */
+            ),
           ],
         ),
       ),
