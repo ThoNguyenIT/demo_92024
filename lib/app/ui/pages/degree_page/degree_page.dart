@@ -15,7 +15,7 @@ class DegreePage extends GetView<DegreeController> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
             onPressed: () => Get.offAllNamed(AppRoutes.home)),
       ),
       body: SafeArea(

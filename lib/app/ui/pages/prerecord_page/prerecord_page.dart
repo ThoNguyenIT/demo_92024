@@ -12,7 +12,7 @@ class PrerecordPage extends GetView<PrerecordController> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
             onPressed: () => Get.offAllNamed(AppRoutes.home)),
         elevation: 0,
         backgroundColor: Colors.transparent,

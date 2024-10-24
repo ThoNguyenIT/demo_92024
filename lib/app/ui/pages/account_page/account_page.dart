@@ -14,7 +14,6 @@ class AccountPage extends GetView<AccountController> {
     /* void showPass() {
       showHidden.toggle();
     } */
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -34,12 +33,10 @@ class AccountPage extends GetView<AccountController> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Divider(color: Colors.black),
-                ),
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Divider(color: Colors.black)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('이름', style: TextStyle(fontWeight: FontWeight.bold)),
                     Container(
@@ -57,12 +54,10 @@ class AccountPage extends GetView<AccountController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Divider(color: Colors.black),
-                ),
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Divider(color: Colors.black)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('연락처', style: TextStyle(fontWeight: FontWeight.bold)),
                     Container(
@@ -80,12 +75,10 @@ class AccountPage extends GetView<AccountController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Divider(color: Colors.black),
-                ),
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Divider(color: Colors.black)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('회사코드', style: TextStyle(fontWeight: FontWeight.bold)),
                     Container(
@@ -103,12 +96,10 @@ class AccountPage extends GetView<AccountController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Divider(color: Colors.black),
-                ),
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Divider(color: Colors.black)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('비밀번호', style: TextStyle(fontWeight: FontWeight.bold)),
                     SizedBox(
@@ -146,12 +137,10 @@ class AccountPage extends GetView<AccountController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Divider(color: Colors.black),
-                ),
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Divider(color: Colors.black)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('비밀번호 확인',
                         style: TextStyle(fontWeight: FontWeight.bold)),

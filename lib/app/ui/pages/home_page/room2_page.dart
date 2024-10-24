@@ -5,10 +5,11 @@ import '../../../controllers/home_controller.dart';
 class Room2Page extends StatefulWidget {
   const Room2Page({super.key});
   @override
-  _Room2PageState createState() => _Room2PageState();
+  Room2PageState createState() => Room2PageState();
+  /* State<Room2Page> createState() => Room2PageState(); //TODO: i really don't know what better */
 }
 
-class _Room2PageState extends State<Room2Page> {
+class Room2PageState extends State<Room2Page> {
   @override
   Widget build(BuildContext context) {
     final HomeController controller = Get.put(HomeController());

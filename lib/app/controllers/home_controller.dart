@@ -3,12 +3,10 @@ import '../data/models/level_data.dart';
 
 class HomeController extends GetxController {
   var isAutoMode = false.obs;
-  var isExpanded = false.obs;
   var currentData = LevelData(isActive: false, level: 4).obs;
 
   void autoMode(bool value) {
     isAutoMode.value = value;
-    print("Auto/Manual was changed: $value");
   }
 
   void activeExtinguisher() {

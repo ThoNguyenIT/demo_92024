@@ -76,13 +76,16 @@ class LoginPage extends GetView<LoginController> {
                   Obx(
                     () => Row(
                       children: [
-                        Checkbox(
-                          value: controller.isAutoLogin.value,
-                          onChanged: (bool? newValue) =>
-                              controller.autoLogin(newValue),
-                          activeColor: Colors.blue,
-                          checkColor: Colors.white,
-                          side: BorderSide(width: 2, color: Colors.blue),
+                        Transform.scale(
+                          scale: 1.2,
+                          child: Checkbox(
+                            value: controller.isAutoLogin.value,
+                            onChanged: (bool? newValue) =>
+                                controller.autoLogin(newValue),
+                            activeColor: Colors.blue,
+                            checkColor: Colors.white,
+                            side: BorderSide(width: 2, color: Colors.blue),
+                          ),
                         ),
                         Text(
                           '자동 로그인',

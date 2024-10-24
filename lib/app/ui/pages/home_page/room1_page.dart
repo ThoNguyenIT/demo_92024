@@ -8,10 +8,10 @@ import '../dialogsns_page/dialogsns_page.dart';
 class Room1Page extends StatefulWidget {
   const Room1Page({super.key});
   @override
-  _Room1PageState createState() => _Room1PageState();
+  Room1PageState createState() => Room1PageState();
 }
 
-class _Room1PageState extends State<Room1Page> {
+class Room1PageState extends State<Room1Page> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {

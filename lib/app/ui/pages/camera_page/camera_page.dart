@@ -15,7 +15,7 @@ class CameraPage extends GetView<CameraController> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
           onPressed: () => Get.offAllNamed(AppRoutes.home),
         ),
       ),
