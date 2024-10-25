@@ -10,7 +10,6 @@ class OptionmenuPage extends GetView<OptionmenuController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //automaticallyImplyLeading: false,
         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
             onPressed: () => Navigator.of(context).pop()),
@@ -143,23 +142,20 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                       Row(
                         children: [
                           SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: Image.asset('assets/icons/7.png',
-                                fit: BoxFit.contain),
-                          ),
+                              width: 20,
+                              height: 20,
+                              child: Image.asset('assets/icons/7.png',
+                                  fit: BoxFit.contain)),
                           SizedBox(width: 10),
-                          Text(
-                            '회원 정보 변경',
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          )
+                          Text('회원 정보 변경',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold))
                         ],
                       ),
                       Icon(Icons.arrow_forward_ios,
-                          size: 20, color: Colors.black),
+                          size: 20, color: Colors.black)
                     ],
                   ),
                 ),
@@ -175,22 +171,21 @@ class OptionmenuPage extends GetView<OptionmenuController> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(children: [
-                        SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: Image.asset('assets/icons/8.png',
-                              fit: BoxFit.contain),
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          '로그 보기',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ]),
+                      Row(
+                        children: [
+                          SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: Image.asset('assets/icons/8.png',
+                                  fit: BoxFit.contain)),
+                          SizedBox(width: 10),
+                          Text('로그 보기',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
+                        ],
+                      ),
                       Icon(Icons.arrow_forward_ios,
                           size: 20, color: Colors.black),
                     ],

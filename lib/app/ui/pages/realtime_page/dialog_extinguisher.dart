@@ -60,13 +60,11 @@ class DialogExtinguisher extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           minimumSize: Size(100, 50),
                           backgroundColor: Colors.grey),
-                      child: Text(
-                        "아니오",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
+                      child: Text("아니오",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
                     ),
                   ],
                 ),

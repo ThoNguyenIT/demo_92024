@@ -35,18 +35,17 @@ class SmokePage extends GetView<SmokeController> {
                             minimum: 0,
                             interval: 1),
                         trackballBehavior: TrackballBehavior(
-                          tooltipDisplayMode:
-                              TrackballDisplayMode.groupAllPoints,
-                          tooltipSettings: InteractiveTooltip(
-                              borderWidth: 4,
-                              format: 'Status: point.y',
-                              borderColor: Colors.amber),
-                          enable: true,
-                          lineWidth: 4,
-                          lineColor: Colors.amber,
-                          shouldAlwaysShow: true,
-                          activationMode: ActivationMode.singleTap,
-                        ),
+                            tooltipDisplayMode:
+                                TrackballDisplayMode.groupAllPoints,
+                            tooltipAlignment: ChartAlignment.center,
+                            tooltipSettings: InteractiveTooltip(
+                                borderWidth: 4,
+                                format: 'point.x',
+                                borderColor: Colors.amber),
+                            enable: true,
+                            lineWidth: 4,
+                            lineColor: Colors.amber,
+                            activationMode: ActivationMode.singleTap),
                         series: <ColumnSeries<SmokeData, String>>[
                           ColumnSeries<SmokeData, String>(
                               width: 1,
@@ -74,20 +73,17 @@ class SmokePage extends GetView<SmokeController> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(width: 3, color: Colors.blue),
-                      ),
+                          color: Colors.white,
+                          border: Border.all(width: 3, color: Colors.blue)),
                       child: GestureDetector(
                         onTap: () => print('2024.10.10 smoke'),
                         child: Padding(
                           padding: EdgeInsets.all(10),
-                          child: Text(
-                            "2024.10.10",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          child: Text("2024.10.10",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ),

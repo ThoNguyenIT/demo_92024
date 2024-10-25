@@ -8,7 +8,6 @@ class CameraPage extends GetView<CameraController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(CameraController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(

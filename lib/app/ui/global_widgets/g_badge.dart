@@ -20,10 +20,8 @@ class GlobalBadge extends StatelessWidget {
       position: badges.BadgePosition.bottomEnd(bottom: -8, end: -6),
       badgeStyle: badges.BadgeStyle(
         badgeColor: Colors.white,
-        borderSide: BorderSide(
-          width: 1,
-          color: Color.fromARGB(255, 105, 105, 105),
-        ),
+        borderSide:
+            BorderSide(width: 1, color: Color.fromARGB(255, 105, 105, 105)),
       ),
       onTap: () {}, //TODO: haven't used yet
       badgeContent: Icon(Icons.error, color: Colors.red),

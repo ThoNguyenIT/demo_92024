@@ -40,7 +40,7 @@ class SparkPage extends GetView<SparkController> {
                                 TrackballDisplayMode.groupAllPoints,
                             tooltipSettings: InteractiveTooltip(
                                 borderWidth: 4,
-                                format: 'Status: point.y',
+                                format: 'point.x',
                                 borderColor: Colors.amber),
                             lineWidth: 4,
                             lineColor: Colors.amber,
@@ -53,7 +53,7 @@ class SparkPage extends GetView<SparkController> {
                               dataSource: controller.sparkData,
                               yValueMapper: (SparkData data, _) => 1,
                               xValueMapper: (SparkData data, _) =>
-                                  '${data.time.hour.toString().padLeft(2, '0')}:${data.time.second.toString().padLeft(2, '0')}',
+                                  '${data.time.hour.toString().padLeft(2, '0')}:${data.time.minute.toString().padLeft(2, '0')}:${data.time.second.toString().padLeft(2, '0')}',
                               pointColorMapper: (SparkData data, _) =>
                                   data.on ? Colors.blue[800] : Colors.red[800]),
                         ],
@@ -73,20 +73,17 @@ class SparkPage extends GetView<SparkController> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(width: 3, color: Colors.blue),
-                      ),
+                          color: Colors.white,
+                          border: Border.all(width: 3, color: Colors.blue)),
                       child: GestureDetector(
                         onTap: () => print('2024.10.10 spark'),
                         child: Padding(
                           padding: EdgeInsets.all(10),
-                          child: Text(
-                            "2024.10.10",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          child: Text("2024.10.10",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ),

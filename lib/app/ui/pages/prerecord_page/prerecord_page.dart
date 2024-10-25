@@ -22,14 +22,11 @@ class PrerecordPage extends GetView<PrerecordController> {
           Expanded(
             flex: 2,
             child: Container(
-              color: Colors.brown,
-              child: Center(
-                child: Text(
-                  'Your Prerecord is here',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
+                color: Colors.brown,
+                child: Center(
+                    child: Text('Your Prerecord is here',
+                        style: TextStyle(
+                            fontSize: 40, fontWeight: FontWeight.bold)))),
           ),
           Expanded(
             flex: 2,
@@ -43,20 +40,17 @@ class PrerecordPage extends GetView<PrerecordController> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(width: 3, color: Colors.blue),
-                    ),
+                        color: Colors.white,
+                        border: Border.all(width: 3, color: Colors.blue)),
                     child: GestureDetector(
                       onTap: () => print('2024.10.10 prerecord'),
                       child: Padding(
                         padding: EdgeInsets.all(10),
-                        child: Text(
-                          "2024.10.10",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
+                        child: Text("2024.10.10",
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ),

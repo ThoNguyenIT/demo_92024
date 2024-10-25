@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/dialogsns_controller.dart';
 import '../../../controllers/home_controller.dart';
-import '../realtime_page/realtime_page.dart';
+import '../../../routes/app_routes.dart';
 
 class DialogsnsPage extends GetView<DialogsnsController> {
   const DialogsnsPage({super.key});
@@ -21,28 +21,17 @@ class DialogsnsPage extends GetView<DialogsnsController> {
               children: [
                 Icon(Icons.warning, size: 35, color: Colors.yellow),
                 SizedBox(width: 5),
-                Text(
-                  "상황발생",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
+                Text("상황발생",
+                    style:
+                        TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                 SizedBox(width: 5),
                 Icon(Icons.warning, size: 35, color: Colors.yellow),
               ],
             ),
-            Text(
-              "발생 시간:",
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "2023/08/10 10:45:30",
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            Text("발생 시간:",
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+            Text("2023/08/10 10:45:30",
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
             SizedBox(height: 5),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,9 +41,8 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
@@ -68,9 +56,8 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
@@ -84,9 +71,8 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
@@ -104,9 +90,8 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
@@ -120,9 +105,8 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
@@ -136,9 +120,8 @@ class DialogsnsPage extends GetView<DialogsnsController> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
@@ -163,10 +146,9 @@ class DialogsnsPage extends GetView<DialogsnsController> {
               height: 60,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(width: 2, color: Colors.grey),
-              ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(width: 2, color: Colors.grey)),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 physics: NeverScrollableScrollPhysics(),
@@ -203,14 +185,7 @@ class DialogsnsPage extends GetView<DialogsnsController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RealtimePage(),
-                      ),
-                    );
-                  },
+                  onPressed: () => Get.toNamed(AppRoutes.realtime),
                   style: ElevatedButton.styleFrom(
                       minimumSize: Size(100, 50),
                       shape: RoundedRectangleBorder(

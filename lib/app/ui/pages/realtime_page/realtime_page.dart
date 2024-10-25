@@ -25,14 +25,12 @@ class RealtimePage extends GetView<RealtimeController> {
           Expanded(
             flex: 4,
             child: Container(
-              color: Colors.cyan,
-              width: double.infinity,
-              child: Center(
-                child: Text('Your Realtime is here',
-                    style:
-                        TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-              ),
-            ),
+                color: Colors.cyan,
+                width: double.infinity,
+                child: Center(
+                    child: Text('Your Realtime is here',
+                        style: TextStyle(
+                            fontSize: 40, fontWeight: FontWeight.bold)))),
           ),
           Expanded(
             flex: 6,
@@ -52,9 +50,8 @@ class RealtimePage extends GetView<RealtimeController> {
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(30)),
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
                                   child: Row(
@@ -70,9 +67,8 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(30)),
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
                                   child: Row(
@@ -88,9 +84,8 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(30)),
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
                                   child: Row(
@@ -133,9 +128,8 @@ class RealtimePage extends GetView<RealtimeController> {
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(30)),
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
                                   child: Row(
@@ -151,9 +145,8 @@ class RealtimePage extends GetView<RealtimeController> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(30)),
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
                                   child: Row(
@@ -200,34 +193,31 @@ class RealtimePage extends GetView<RealtimeController> {
                       ),
                     ),
                     ElevatedButton.icon(
-                      onPressed: () => showDialog(
-                        context: context,
-                        barrierDismissible: true,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            backgroundColor: Colors.white,
-                            /*contentPadding: EdgeInsets.zero,*/
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
-                              side: BorderSide(color: Colors.grey, width: 2.5),
+                        onPressed: () => showDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  backgroundColor: Colors.white,
+                                  /*contentPadding: EdgeInsets.zero,*/
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(15)),
+                                      side: BorderSide(
+                                          color: Colors.grey, width: 2.5)),
+                                  content: DialogExtinguisher(),
+                                );
+                              },
                             ),
-                            content: DialogExtinguisher(),
-                          );
-                        },
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 255, 17, 0)),
-                      label: Text(
-                        '소 화',
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      icon: Image.asset('assets/icons/extinguisher.png',
-                          width: 20, height: 20),
-                    ),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 255, 17, 0)),
+                        label: Text('소 화',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
+                        icon: Image.asset('assets/icons/extinguisher.png',
+                            width: 20, height: 20)),
                     SizedBox(
                       height: 100,
                       child: ListView.builder(

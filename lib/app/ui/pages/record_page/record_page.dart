@@ -23,10 +23,9 @@ class RecordPage extends GetView<RecordController> {
             child: Container(
               color: Colors.brown,
               child: Center(
-                child: Text(
-                  'Your record is here',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                ),
+                child: Text('Your record is here',
+                    style:
+                        TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
               ),
             ),
           ),
@@ -41,9 +40,7 @@ class RecordPage extends GetView<RecordController> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(width: 0),
-                    ),
+                        color: Colors.white, border: Border.all(width: 0)),
                     child: GestureDetector(
                       onTap: () => Get.toNamed(AppRoutes.prerecord),
                       child: Padding(
@@ -51,15 +48,12 @@ class RecordPage extends GetView<RecordController> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                "감지/영상 보기",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                                child: Text("감지/영상 보기",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold))),
                             Icon(Icons.arrow_forward_ios_rounded,
                                 size: 25, color: Colors.black)
                           ],
@@ -69,9 +63,7 @@ class RecordPage extends GetView<RecordController> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(width: 0),
-                    ),
+                        color: Colors.white, border: Border.all(width: 0)),
                     child: GestureDetector(
                       onTap: () {},
                       child: Padding(
@@ -79,15 +71,12 @@ class RecordPage extends GetView<RecordController> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                "타임랩스 영상 보기",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                                child: Text("타임랩스 영상 보기",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold))),
                             Icon(Icons.arrow_forward_ios_rounded,
                                 size: 25, color: Colors.black)
                           ],
@@ -105,15 +94,12 @@ class RecordPage extends GetView<RecordController> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                "열화상 영상 보기",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                                child: Text("열화상 영상 보기",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold))),
                             Icon(Icons.arrow_forward_ios_rounded,
                                 size: 25, color: Colors.black)
                           ],
@@ -133,17 +119,14 @@ class RecordPage extends GetView<RecordController> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                "온도 그래프 보기",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                                child: Text("온도 그래프 보기",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold))),
                             Icon(Icons.arrow_forward_ios_rounded,
-                                size: 25, color: Colors.black),
+                                size: 25, color: Colors.black)
                           ],
                         ),
                       ),
@@ -159,15 +142,12 @@ class RecordPage extends GetView<RecordController> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                "불꽃 감지 센서 보기",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                                child: Text("불꽃 감지 센서 보기",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold))),
                             Icon(Icons.arrow_forward_ios_rounded,
                                 size: 25, color: Colors.black)
                           ],
@@ -185,17 +165,14 @@ class RecordPage extends GetView<RecordController> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                "연기 감지 센서 보기",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                                child: Text("연기 감지 센서 보기",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold))),
                             Icon(Icons.arrow_forward_ios_rounded,
-                                size: 25, color: Colors.black),
+                                size: 25, color: Colors.black)
                           ],
                         ),
                       ),
